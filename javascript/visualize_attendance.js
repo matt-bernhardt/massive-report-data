@@ -1,0 +1,156 @@
+<?php
+	$sql = "SELECT attendance, format(attendance,0) AS FormatAttendance, date_format(MatchTime,'%c/%e/%Y') AS MatchDate, o.teamname AS Opponent, date_format(MatchTime,'%Y') AS Season ";
+	$sql .= "FROM tbl_games g ";
+	$sql .= "LEFT OUTER JOIN tbl_teams o ON g.ATeamID = o.ID ";
+	$sql .= "WHERE HteamID = 11 ";
+	$sql .= "  AND MatchTypeID = 21 ";
+	$sql .= "  AND MatchTime < now() ";
+	$sql .= "ORDER BY MatchTime ASC ";
+	$attendance = mysql_query($sql, $connection) or die(mysql_error());
+?>
+<script language="javascript" type="text/javascript">
+$(function () {
+	var datasets = {
+<?php
+	$intX = 1;
+	$intSeason = 0;
+	$intFirstSeason = 1;
+	while($row = @mysql_fetch_array($attendance, MYSQL_ASSOC)) {
+
+		if($intSeason<>$row['Season']){
+			if ($intFirstSeason==1) {
+				$intFirstSeason = 0;
+			} else {
+				print "]},\r";
+			}
+			print "\"" . $row['Season'] . "\": {label: \"" . $row['Season'] . "\", data: [";
+			$intX = 1;
+		}
+		if($intX > 1){
+			print ",";
+		}
+		print "[".$intX.",".$row['attendance'].",'".$row['MatchDate']."','".$row['FormatAttendance']."','".$row['Opponent']."']";
+		$intX = $intX + 1;
+		$intSeason = $row['Season'];
+	}
+	print "]},\r";
+
+?>
+	};
+
+    var options = {
+    	series: {
+    		points: {show: true},
+    		lines: {show: true}
+    	},
+    	grid: {
+    		labelMargin: 20,
+    		hoverable: true,
+    		backgroundColor: "#f2f2f2"
+    	},
+    	xaxis: {
+    		min: 0,
+    		max: 18,
+    		color: "#b4b4b4"
+    	},
+    	yaxis: {
+    		min: 0,
+    		max: 35000,
+    		color: "#b4b4b4"
+    	}
+    };
+
+    var i = 0;
+    $.each(datasets, function(key, val) {
+        val.color = i;
+        ++i;
+    });
+
+	// insert checkboxes
+	var filterContainter = $("#filter");
+	var d = new Date();
+	var thisYear = d.getFullYear(); // get the current year
+    $.each(datasets, function(key, val) {
+		if(key==thisYear){
+			var strChecked = 'checked="checked" '; // only check the current year initially
+		} else {
+			var strChecked = '';
+		}
+        filterContainter.append('<li><input type="checkbox" name="' + key +
+                               '" '+strChecked+'id="id' + key + '">' +
+                               '<label for="id' + key + '">'
+                                + val.label + '</label></li>');
+    });
+    filterContainter.find("input").click(plotAccordingToChoices);
+
+	//
+    function plotAccordingToChoices() {
+        var data = [];
+       	$(this).parent().parent().children().children("label").removeClass('selected');
+
+        filterContainter.find("input:checked").each(function () {
+
+            var key = $(this).attr("name");
+            if (key && datasets[key]) {
+                data.push(datasets[key]);
+				$(this).next().addClass('selected');
+			}
+        });
+
+        if (data.length > 0)
+            $.plot($("#flotchart"), data, options);
+    }
+
+    plotAccordingToChoices();
+
+
+    var games = [
+<?php
+	$intX = 1;
+	while($row = @mysql_fetch_array($attendance, MYSQL_ASSOC)) {
+		print "[".$intX.",".$row['attendance'].",'".$row['MatchDate']."','".$row['FormatAttendance']."','".$row['Opponent']."'],";
+		$intX = $intX + 1;
+	}
+?>
+    ];
+
+	function showTooltip(x, y, contents) {
+		$('<div id="tooltip">'+contents+'</div>').css( {
+			position: 'absolute',
+			display: 'none',
+			top: y+5,
+			left: x+5,
+			padding: '5px',
+			border: '5px solid #e6e6e6',
+			'background-color': '#f2f2f2',
+			opacity: 0.90,
+			color: '#000'
+		}).appendTo("body").fadeIn(200);
+	};
+
+    var previousPoint = null;
+    $("#flotchart").bind("plothover", function (event, pos, item) {
+
+		if (item) {
+			if (previousPoint != item.dataIndex) {
+				previousPoint = item.dataIndex;
+
+				$("#tooltip").remove();
+				var x = item.datapoint[0].toFixed(0),
+					y = item.datapoint[1].toFixed(0),
+					date = item.series.data[x-1][2],
+					attendance = item.series.data[x-1][3];
+					opponent = item.series.data[x-1][4];
+				showTooltip(item.pageX, item.pageY,
+							"Game " + x + ": " + date + "<br /> " + attendance +"<br />" + opponent
+				);
+			}
+		}
+		else {
+			$("#tooltip").remove();
+			previousPoint = null;
+		}
+    });
+
+});
+</script>

@@ -1,0 +1,127 @@
+/* ****************************************************************************
+****
+**** Monitor styles (more than 980px wide)
+****
+* */
+@media (min-width: 980px) {
+  body {
+/*    background: url('/images/bg_monitor.gif') #1b1b1b repeat-y center; */
+  }
+  .container {
+    background: url('/images/logo_mr_140.png') #404040 no-repeat 10px 15px;
+    width: 940px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  header {
+    height: 160px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  ul.massive-network {
+    float: right;
+  }
+  ul.massive-network li {
+    float: left;
+    margin-top: 0px;
+    list-style-type: none;
+    margin-left: 0;
+  }
+  ul.massive-network li a {
+    width: 130px;
+    background: #333;
+    display: inline-block;
+    padding: 5px;
+margin-right: 20px;
+  }
+  ul.massive-network li:last-child a {
+    margin-right: 10px;
+  }
+  ul.massive-network li a:hover,
+  ul.massive-network li a:focus {
+    background: #000;
+  }
+div.site-title {
+	margin-left: 170px;
+	padding-top: 1em;
+}
+summary {
+	display: none;
+}
+nav {
+	width: 470px;
+	background: #333;
+	margin-left: 490px;
+	margin-top: -50px;
+}
+nav a {
+	width: 50px;
+	display: inline-block;
+	float: left;
+	background: #333;
+	margin-right: 20px;
+	margin-top: 2em;
+	padding: 5px;
+}
+nav a.grid-2 {
+	width: 130px;
+}
+nav a:nth-child(1),
+nav a:nth-child(2),
+nav a:nth-child(3) {
+	padding-top: 4em;
+	margin-top: 0;
+}
+nav a:nth-child(3),
+nav a:nth-child(8) {
+	margin-right: 0;
+}
+nav a:hover,
+nav a:focus {
+	background: #000;
+}
+
+/* Game pages */
+div.matchdate {
+	margin-top: 2em;
+}
+div#page-game h1 {
+	margin-top: 0;
+	text-align: center;
+}
+div.matchdate,
+div.venue,
+div.competition,
+div.attendance {
+	text-align: center;
+}
+
+div#homeroster {
+	width: 300px;
+	display: inline-block;
+  margin-right: 10px;
+}
+div#awayroster {
+	width: 300px;
+	display: inline-block;
+	float: right;
+}
+div#timeline {
+	width: 300px;
+	display: inline-block;
+}
+  div#flotchart {
+    width: 100%;
+    height: 720px;
+  }
+  table.statsyear th.monitor,
+  table.statsyear td.monitor {
+    display: table-cell;
+  }
+
+  /* Opponent Summary */
+  form#filter-season {
+	width: 900px;
+  }
+
+}

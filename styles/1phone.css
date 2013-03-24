@@ -1,0 +1,90 @@
+/* ****************************************************************************
+****
+**** Phone styles (up to 580px wide)
+****
+* */
+@media (max-width: 580px) {
+  body {
+  }
+  .container {
+    width: 220px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: url('/images/logo_mr_140.png') #404040 no-repeat center 10px ;
+  }
+  div.site-title {
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+  }
+  div.site-title a {
+  	display: block;
+	margin-top: 140px;
+	text-align: center;
+  }
+  .massive-network {
+    display: none;
+  }
+  nav a {
+    width: 60px;
+    margin: 10px;
+    display: inline;
+    float: left;
+  }
+  nav a:nth-child(3n) {
+    margin-right: 0;
+  }
+  nav a:nth-child(3n+1) {
+    margin-left: 0;
+  }
+  section#content {
+    clear: both;
+  }
+  div#tabs ul li {
+    width: 100%;
+  }
+  div#container {
+    width: 220px !important;
+  }
+  div#flotchart {
+    width: 100%;
+    height: 165px;
+  }
+  /* Player profile styles */
+  div.page_player dl dt {
+    width: 100%;
+  }
+  div.page_player dl dd {
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+  img#linechart {
+    width: 100%;
+    height: auto;
+  }
+  table.statsyear th.phone,
+  table.statsyear td.phone {
+    display: table-cell;
+  }
+
+  /* Opponent Summary */
+  form#filter-season {
+	width: 220px;
+  }
+  form#filter-season label[for=home],
+  form#filter-season label[for=away] {
+    margin-bottom: 1em;
+  }
+  form#filter-season label[for=home] {
+	margin-left: 0;
+  }
+  form#filter-season input[type=submit],
+  form#filter-season label[for=startyear],
+  form#filter-season label[for=endyear] {
+    display: block;
+	margin: 1em 0;
+  }
+  form#filter-season ol.ui-slider-scale span {
+    display: none;
+  }
+}
+

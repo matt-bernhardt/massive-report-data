@@ -1,0 +1,83 @@
+/* ****************************************************************************
+****
+**** Tablet styles (580px to 980px wide)
+****
+* */
+@media (min-width: 580px) and (max-width: 980px) {
+  body {
+  }
+  .container {
+    background: url('/images/logo_mr_60.png') #404040 no-repeat 10px 15px;
+    width: 540px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+  }
+  div.site-title {
+    clear: right;
+    margin-left: 80px;
+    margin-top: 0em;
+    margin-bottom: 1em;
+    width: 300px;
+    float: left;
+    margin-right: 0;
+  }
+  nav {
+    clear: both;
+  }
+  nav a {
+    display: inline;
+    float: left;
+    width: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 1em;
+	background: #333;
+	padding: 5px;
+  }
+  nav a.grid-2 {
+	width: 130px;
+  }
+  nav a:nth-child(1),
+  nav a:nth-child(2),
+  nav a:nth-child(3) {
+    font-size: 1.5em;
+  }
+  nav a:hover,
+  nav a:focus {
+	background: #000;
+  }
+  section#content {
+    clear: both;
+    margin-top: 1em;
+  }
+  div#container {
+    width: 540px !important;
+  }
+  div#flotchart {
+    width: 100%;
+    height: 405px;
+  }
+  img#linechart {
+    width: 100%;
+    height: auto;
+  }
+  table.statsyear th.tablet,
+  table.statsyear td.tablet {
+    display: table-cell;
+  }
+
+  /* Opponent Summary */
+  form#filter-season {
+	width: 520px;
+  }
+  form#filter-season input[type=submit] {
+    display: block;
+    margin-bottom: 1em;
+  }
+  form#filter-season label[for=home] {
+    margin-left: 0;
+  }
+  
+}
+
