@@ -1,6 +1,7 @@
 <?php
 
 	if($intOpponentID == ''){
+		// need to add an opponent browse
 		$intOpponentID = 12;
 	}
 	
@@ -76,7 +77,7 @@
 	$longPageContent .= '<label for="startyear">Start Date:';
 	$longPageContent .= '<select id="startyear" name="startyear">';
 	$intDefault = 1996;
-	for($x=1996;$x<=2012;$x++){
+	for($x=1996;$x<=2013;$x++){
 		if($x==$intStartYear){
 			$strSelected = ' selected="selected"';
 		} else {
@@ -88,8 +89,8 @@
 	$longPageContent .= '</label>';
 	$longPageContent .= '<label for="endyear">End Date:';
 	$longPageContent .= '<select id="endyear" name="endyear">';
-	$intDefault = 2011;
-	for($x=1996;$x<=2012;$x++){
+	$intDefault = 2013;
+	for($x=1996;$x<=2013;$x++){
 		if($x==$intEndYear){
 			$strSelected = ' selected="selected"';
 		} else {
