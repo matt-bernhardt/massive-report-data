@@ -32,6 +32,7 @@
 	    <ul class="inline" style="float: right;">
 	      <li><a href="/changelog">Changelog</a></li>
 	      <li><a href="/about">About</a></li>
+	      <li style="margin-right: 30px;"><a href="http://flattr.com/thing/1801973/Massive-Report-Data" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></li>
 	    </ul>
 	    <p>Massive Report Data is a production of Matthew Bernhardt for Massive Report. Please contact Matt by <a href="mailto:bernhardtsoccer@yahoo.com?subject=MRData">email</a>, <a href="http://www.facebook.com/BernhardtSoccer">Facebook</a> or <a href="http://twitter.com/bernhardtsoccer">Twitter</a> with any questions or concerns.</p>
 	  </footer>
