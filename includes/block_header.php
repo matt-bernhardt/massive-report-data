@@ -12,7 +12,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <script src="/javascript/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script type="text/javascript" src="/javascript/jquery.ba-hashchange.js"></script>
 <?php
 	if(isset($boolIsotope) && $boolIsotope == TRUE) {
@@ -51,8 +52,8 @@
 	}
 	if(isset($boolD3) && $boolD3==TRUE){
 ?>
-<script src="http://mbostock.github.com/d3/d3.js?2.4.2" type="text/javascript"></script>
-<script src="http://mbostock.github.com/d3/d3.layout.js?2.4.2" type="text/javascript"></script>
+<!-- script src="http://d3js.org/d3.v2.js" type="text/javascript"></script -->
+<script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
 <?php
 	}
 ?>
@@ -79,7 +80,6 @@
       <header>
         <ul class="massive-network">
           <li><a href="http://www.massivereport.com">Massive Report</a></li>
-          <li><a href="http://www.massivereportpodcast.com">Podcast</a></li>
           <li class="selected"><a href="/">Data</a></li>
         </ul>
         <div class="site-title"><a href="/">Data</a></div>
