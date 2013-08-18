@@ -101,9 +101,6 @@ $(function () {
 		} else {
 			arrTemp[0] = strDefault;
 		}
-		for(var i = 0;i<arrTemp.length;i++){
-			alert(i+' '+arrTemp[i]);
-		}
 		return arrTemp;
     }
 

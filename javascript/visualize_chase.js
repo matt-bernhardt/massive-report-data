@@ -157,7 +157,7 @@ var datasets = {
 
     function setHashArray(strHash) {
     	strHash = strHash.trim().replace(/ /gi,'+');
-    	window.location.hash = strHa sh;
+    	window.location.hash = strHash;
     }
 
 	//
@@ -172,13 +172,9 @@ var datasets = {
             if (key && datasets[key]) {
                 data.push(datasets[key]);
 				$(this).next().addClass('selected');
-				// alert(key+" selected");				
 			}
-            //alert(key+" "+datasets[key]);
-			//$(this).next().css('background-color','red');
-            //alert(key);
 
-            hash+=' '+key;
+            hash += ' '+key;
 
         });
 
