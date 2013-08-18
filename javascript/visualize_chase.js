@@ -1,5 +1,6 @@
 <script language="javascript" type="text/javascript">
 $(function () {
+	var i = 0;
 var datasets = {
 <?php
 	$intX = 1;
@@ -116,16 +117,26 @@ var datasets = {
         ++i;
     });
 
-	// insert checkboxes
+	// container for filters
 	var filterContainter = $("#filter");
+
+	// read initial state from hash into arrHash
+	var reqHash = window.location.hash.replace('#','');
+
+	// populate hash array
 	var d = new Date();
-	var thisYear = d.getFullYear();
+	var arrHash = [];
+	arrHash = getHashArray(d.getFullYear());
+
+	// set initial state based on arrHash
+	i = 0;
     $.each(datasets, function(key, val) {
-		if(key==thisYear){
-			var strChecked = 'checked="checked" ';
-		} else {
-			var strChecked = '';
-		}
+    	var strChecked = '';
+    	if(i<=arrHash.length && key===arrHash[i]){
+    		strChecked = 'checked="checked"';
+    		i++;
+    	}
+
         filterContainter.append('<li><input type="checkbox" name="' + key +
                                '" '+strChecked+'id="id' + key + '">' +
                                '<label for="id' + key + '">'
@@ -133,8 +144,25 @@ var datasets = {
     });
     filterContainter.find("input").click(plotAccordingToChoices);
 
+    function getHashArray(strDefault) {
+		var arrTemp = [];
+		var reqHash = window.location.hash.replace('#','');
+		if(reqHash){
+			arrTemp = reqHash.split('+');
+		} else {
+			arrTemp[0] = strDefault;
+		}
+		return arrTemp;
+    }
+
+    function setHashArray(strHash) {
+    	strHash = strHash.trim().replace(/ /gi,'+');
+    	window.location.hash = strHa sh;
+    }
+
 	//
     function plotAccordingToChoices() {
+    	var hash = '';
         var data = [];
        	$(this).parent().parent().children().children("label").removeClass('selected');
 
@@ -149,7 +177,12 @@ var datasets = {
             //alert(key+" "+datasets[key]);
 			//$(this).next().css('background-color','red');
             //alert(key);
+
+            hash+=' '+key;
+
         });
+
+        setHashArray(hash);
 
         if (data.length > 0)
             $.plot($("#flotchart"), data, options);

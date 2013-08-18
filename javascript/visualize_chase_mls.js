@@ -1,5 +1,6 @@
 <script language="javascript" type="text/javascript">
 $(function () {
+	var i = 0;
 var datasets = {
 <?php
 	$intX = 1;
@@ -10,7 +11,7 @@ var datasets = {
 	$sql = "SELECT DISTINCT HTeamID, t.Team3Ltr ";
 	$sql .= "FROM tbl_games g ";
 	$sql .= "LEFT OUTER JOIN tbl_teams t ON g.HTeamID = t.ID ";
-	$sql .= "WHERE MatchTypeID = 21 AND YEAR(MatchTime) = 2012 ";
+	$sql .= "WHERE MatchTypeID = 21 AND YEAR(MatchTime) = 2013 ";
 	$sql .= "ORDER BY Team3Ltr ASC";
 	$teams = mysql_query($sql, $connection) or die(mysql_error());
 	while($row = @mysql_fetch_array($teams, MYSQL_ASSOC)) {
@@ -25,7 +26,7 @@ var datasets = {
 		$intTeamID = $row['HTeamID'];
 		$strTeamAbbv = $row['Team3Ltr'];
 		if($intTeamID == 11){
-			$strSeriesName = "2012";
+			$strSeriesName = "2013";
 		} else {
 			$strSeriesName = $strTeamAbbv;
 		}
@@ -38,7 +39,7 @@ var datasets = {
 		$sql .= "FROM tbl_games g ";
 		$sql .= "LEFT OUTER JOIN tbl_teams h ON g.HTeamID = h.ID ";
 		$sql .= "LEFT OUTER JOIN tbl_teams a ON g.ATeamID = a.ID ";
-		$sql .= "WHERE (HteamID = ".$intTeamID." OR ATeamID = ".$intTeamID.") AND MatchTypeID = 21 AND MatchTime < NOW() AND YEAR(matchtime) = 2012 ";
+		$sql .= "WHERE (HteamID = ".$intTeamID." OR ATeamID = ".$intTeamID.") AND MatchTypeID = 21 AND MatchTime < NOW() AND YEAR(matchtime) = 2013 ";
 		$sql .= "ORDER BY MatchTime ASC";
 		$games = mysql_query($sql,$connection) or die(mysql_error());
 		$intX = 1;
@@ -150,22 +151,31 @@ var datasets = {
 
     // hard-code color indices to prevent them from shifting as
     // countries are turned on/off
-    var i = 0;
     $.each(datasets, function(key, val) {
         val.color = i;
         ++i;
     });
 
-	// insert checkboxes
+	// container for filters
 	var filterContainter = $("#filter");
+
+	// read initial graph state from hash
+	var reqHash = window.location.hash.replace('#','');
+
+	// populate hash array
 	var d = new Date();
-	var thisYear = d.getFullYear();
+	var arrHash = [];
+	arrHash = getHashArray(d.getFullYear());
+
+	// set initial state based on arrHash
+	i = 0;
     $.each(datasets, function(key, val) {
-		if(key==thisYear){
-			var strChecked = 'checked="checked" ';
-		} else {
-			var strChecked = '';
-		}
+    	var strChecked = '';
+    	if(i<=arrHash.length && key==arrHash[i]){
+			strChecked = 'checked="checked" ';
+			i++;
+    	}
+
         filterContainter.append('<li><input type="checkbox" name="' + key +
                                '" '+strChecked+'id="id' + key + '">' +
                                '<label for="id' + key + '">'
@@ -173,11 +183,29 @@ var datasets = {
     });
     filterContainter.find("input").click(plotAccordingToChoices);
 
-	//
+    function getHashArray(strDefault) {
+		var arrTemp = [];
+		var reqHash = window.location.hash.replace('#','');
+		if(reqHash){
+			arrTemp = reqHash.split('+');
+		} else {
+			arrTemp[0] = strDefault;
+		}
+		return arrTemp;
+    }
+
+    function setHashArray(strHash) {
+    	strHash = strHash.trim().replace(/ /gi,'+');
+    	window.location.hash = strHash;
+    }
+
+	// This creates/updates the chart
     function plotAccordingToChoices() {
+    	var hash = '';
         var data = [];
        	$(this).parent().parent().children().children("label").removeClass('selected');
 
+       	// scan input for current settings
         filterContainter.find("input:checked").each(function () {
 
             var key = $(this).attr("name");
@@ -189,7 +217,12 @@ var datasets = {
             //alert(key+" "+datasets[key]);
 			//$(this).next().css('background-color','red');
             //alert(key);
+
+            // build hash string for saving state
+            hash+=' '+key;
         });
+
+        setHashArray(hash);
 
         if (data.length > 0)
             $.plot($("#flotchart"), data, options);
