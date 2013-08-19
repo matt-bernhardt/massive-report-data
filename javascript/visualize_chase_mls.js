@@ -183,6 +183,12 @@ var datasets = {
     });
     filterContainter.find("input").click(plotAccordingToChoices);
 
+    function debugArray(array) {
+    	for(var i = 0;i<array.length;i++){
+    		alert(i+' '+array[i]);
+    	}
+    }
+
     function getHashArray(strDefault) {
 		var arrTemp = [];
 		var reqHash = window.location.hash.replace('#','');

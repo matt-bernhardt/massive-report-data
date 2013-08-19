@@ -132,7 +132,7 @@ var datasets = {
 	i = 0;
     $.each(datasets, function(key, val) {
     	var strChecked = '';
-    	if(i<=arrHash.length && key===arrHash[i]){
+    	if(i<=arrHash.length && key==arrHash[i]){
     		strChecked = 'checked="checked"';
     		i++;
     	}
@@ -143,6 +143,12 @@ var datasets = {
                                 + val.label + '</label></li>');
     });
     filterContainter.find("input").click(plotAccordingToChoices);
+
+    function debugArray(array) {
+    	for(var i = 0;i<array.length;i++){
+    		alert(i+' '+array[i]);
+    	}
+    }
 
     function getHashArray(strDefault) {
 		var arrTemp = [];
