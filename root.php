@@ -30,6 +30,11 @@
 
 			$strCategory = $arrPath[1];
 			switch ($strCategory) {
+				case "opponents":
+					$strPageTitle .= " > Opponents";
+					include ("includes/browse_opponents.php");
+					break;
+
 				case "players":
 					$strPageTitle .= " > Players";
 					include ("includes/browse_players_v2.php");
@@ -129,6 +134,10 @@
 
 				case "chase_mls":
 					include ("includes/visualize_chase_mls.php");
+					break;
+
+				case "combinations":
+					include ("includes/visualize_combinations.php");
 					break;
 
 				case "standings":
