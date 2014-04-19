@@ -11,9 +11,9 @@
 	$sql .= "FROM tbl_players ";
 	$sql .= "WHERE ID = ".$intPlayerID;
 
-	$player = mysql_query($sql, $connection) or die(mysql_error());
+	$player = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
-	while($row = @mysql_fetch_array($player,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($player,MYSQLI_ASSOC)) {
 		$strDOB = new DateTime($row['DOB']);
 		$datToday = new DateTime();
 		$intPlayerAge = $strDOB->diff($datToday);
@@ -25,6 +25,10 @@
 		$strCitizenship = $row['Citizenship'];
 		$textBio = $row['Bio'];
 	}
+
+	$sql = "SELECT URL, Title FROM tbl_url WHERE PlayerID = ".$intPlayerID." ORDER BY Title ASC";
+	$url = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+
 ?>
 	<dl>
 		<dt>Citizenship</dt>
@@ -48,9 +52,15 @@
 		if($intWeight) {
 			print '<dt>Weight</dt><dd>'.$intWeight.'</dd>';
 		}
+		if(mysqli_num_rows($url)){
+			print '<dt>Related Links</dt>';
+			while($row = @mysqli_fetch_array($url,MYSQLI_ASSOC)) {
+				print '<dd><a href="'.$row['URL'].'">'.$row['Title'].'</a></dd>';
+			}
+		}
 ?>
 	</dl>
 	<div class="bio clearboth"><?php print $textBio; ?></div>
 <?php
-	include_once("../includes/block_conn_open.php");
+	include_once("../includes/block_conn_close.php");
 ?>

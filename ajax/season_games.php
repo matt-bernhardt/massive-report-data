@@ -13,11 +13,11 @@
 	$sql .= "LEFT OUTER JOIN lkp_matchtypes t ON g.MatchTypeID = t.ID ";
 	$sql .= "WHERE (HteamID = 11 OR AteamID = 11) AND Year(MatchTime) = ".$intSeason." ";
 	$sql .= "ORDER BY MatchTime ASC";
-	$games = mysql_query($sql, $connection) or die(mysql_error());
+	$games = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 ?>
 <div id="container" class="clearfix" style="margin-left: -10px; width:980px;">
 <?php
-	while($row = @mysql_fetch_array($games,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($games,MYSQLI_ASSOC)) {
 
 		switch($row['id']) {
 			case '21':

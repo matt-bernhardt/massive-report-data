@@ -15,7 +15,7 @@
 	$sql .= "WHERE playerID = ".$intPlayerID." ";
 	$sql .= "ORDER BY SortDate ASC";
 
-	$contracts = mysql_query($sql, $connection) or die(mysql_error());
+	$contracts = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 ?>
 <table>
 	<thead>
@@ -27,7 +27,7 @@
 	</thead>
 	<tbody>
 <?php
-	while($row = @mysql_fetch_array($contracts,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($contracts,MYSQLI_ASSOC)) {
 ?>
 		<tr>
 			<td><?php print $row['SigningDate']; ?></td>
@@ -40,5 +40,5 @@
 	</tbody>
 </table>
 <?php
-	include_once("../includes/block_conn_open.php");
+	include_once("../includes/block_conn_close.php");
 ?>

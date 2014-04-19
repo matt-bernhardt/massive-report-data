@@ -12,7 +12,7 @@
 	$sql .= "LEFT OUTER JOIN lkp_matchtypes t on s.CompetitionID = t.ID ";
 	$sql .= "WHERE TeamID = 11 AND Year = ".$intSeason." AND Position <> 'Goalkeeper' ";
 	$sql .= "ORDER BY p.LastName, p.FirstName, Competition";
-	$statlines = mysql_query($sql, $connection) or die(mysql_error());
+	$statlines = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 ?>
 <div id="container" class="clearfix">
 	<table class="statsyear">
@@ -42,7 +42,7 @@
 	$boolNewPlayer = FALSE;
 	$strLastPlayer = '';
 	$boolOdd = TRUE;
-	while($row = @mysql_fetch_array($statlines,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($statlines,MYSQLI_ASSOC)) {
 		switch($row['Position']) {
 			case 'Goalkeeper':
 				$strPos = "GK";

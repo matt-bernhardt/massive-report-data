@@ -13,7 +13,7 @@
 	$sql .= "LEFT OUTER JOIN tbl_teams h ON g.HTeamID = h.ID  ";
 	$sql .= "LEFT OUTER JOIN tbl_teams a ON g.ATeamID = a.ID  ";
 	$sql .= "WHERE (HteamID = 11 OR ATeamID = 11) AND MatchTypeID = 21 and MatchTime < now() ORDER BY MatchTime ASC";
-	$points = mysql_query($sql, $connection) or die(mysql_error());
+	$points = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 ?>
 
@@ -30,7 +30,7 @@ var datasets = {
 	$intX = 1;
 	$intSeason = 0;
 	$intFirstSeason = 1;
-	while($row = @mysql_fetch_array($points, MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($points, MYSQLI_ASSOC)) {
 
 
 		if($intSeason<>$row['Season']){
@@ -158,7 +158,7 @@ var datasets = {
     var games = [
 <?php
 	$intX = 1;
-	while($row = @mysql_fetch_array($attendance, MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($attendance, MYSQLI_ASSOC)) {
 		print "[".$intX.",".$row['attendance'].",'".$row['MatchDate']."','".$row['FormatAttendance']."','".$row['Opponent']."'],";
 		$intX = $intX + 1;
 	}

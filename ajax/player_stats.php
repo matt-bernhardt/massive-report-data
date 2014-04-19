@@ -14,7 +14,7 @@
 	$sql .= 'WHERE s.PlayerID = '.$intPlayerID.' ';
 	$sql .= 'ORDER BY Year, teamname, Competition';
 
-	$statsyear = mysql_query($sql, $connection) or die(mysql_error());
+	$statsyear = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 ?>
 <table class="statsyear">
 	<thead>
@@ -43,7 +43,7 @@
 	$boolNewPlayer = FALSE;
 	$strLastYear = '';
 	$boolOdd = TRUE;
-	while($row = @mysql_fetch_array($statsyear,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($statsyear,MYSQLI_ASSOC)) {
 		switch($row['MatchType']) {
 			case 'MLS League':
 				$strComp = "League";
@@ -118,5 +118,5 @@
 		});
 </script>
 <?php
-	include_once("../includes/block_conn_open.php");
+	include_once("../includes/block_conn_close.php");
 ?>

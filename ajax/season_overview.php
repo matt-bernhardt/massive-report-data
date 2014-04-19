@@ -10,9 +10,9 @@
 	$sql = "SELECT Summary ";
 	$sql .= "FROM tbl_yearsummaries ";
 	$sql .= "WHERE TeamID = 11 AND Year = ".$intSeason;
-	$summary = mysql_query($sql, $connection) or die(mysql_error());
+	$summary = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
-	while($row = @mysql_fetch_array($summary,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($summary,MYSQLI_ASSOC)) {
 		print $row['Summary'];
 	}
 

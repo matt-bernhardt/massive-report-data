@@ -14,7 +14,7 @@
 	$sql .= "INNER JOIN lkp_contractstatus s ON c.ContractType = s.ID ";
 	$sql .= "WHERE (c.LastTeamID = 11 OR c.TeamID = 11) AND Year(SigningDate) = ".$intSeason." ";
 	$sql .= "ORDER BY c.SigningDate ASC";
-	$transactions = mysql_query($sql, $connection) or die(mysql_error());
+	$transactions = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 ?>
 <table>
 <thead>
@@ -27,7 +27,7 @@
 </thead>
 <tbody>	
 <?php
-	while($row = @mysql_fetch_array($transactions,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($transactions,MYSQLI_ASSOC)) {
 		if($row['PrevTeamID'] == 11 && $row['CurrTeamID'] == 11){
 			// Player stays with Columbus
 			$strTransaction = "<br />New Contract";
