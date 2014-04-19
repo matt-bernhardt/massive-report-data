@@ -32,7 +32,7 @@
   <priority>0.90</priority>
 </url>
 <url>
-  <loc>http://www.massivereportdata.com/deepzoom/</loc>
+  <loc>http://www.massivereportdata.com/browse/roster</loc>
   <changefreq>weekly</changefreq>
   <priority>0.90</priority>
 </url>
@@ -68,86 +68,356 @@
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/1996</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/1997</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/1998</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/1999</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2000</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2001</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2002</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2003</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2004</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2005</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2006</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2007</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2008</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2009</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2010</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
 </url>
 <url>
   <loc>http://www.massivereportdata.com/season/2011</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/season/2012</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/season/2013</loc>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.massivereportdata.com/season/2012</loc>
+  <loc>http://www.massivereportdata.com/player/3672</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3871</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3901</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3903</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3863</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3902</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/1105</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3673</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3868</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3960</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/121</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3872</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3681</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3963</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3869</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/947</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3670</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/149</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/2217</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3961</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3867</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3964</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3899</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3606</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3900</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3962</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/1193</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3965</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/player/3632</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13257</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13262</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13270</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13279</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13298</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13304</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13316</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13326</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13333</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13349</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13355</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13371</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13647</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13375</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13382</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13657</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13387</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13397</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13408</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13419</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13425</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13440</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13446</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.massivereportdata.com/game/13459</loc>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
