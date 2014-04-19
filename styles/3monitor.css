@@ -124,4 +124,7 @@ div#timeline {
 	width: 900px;
   }
 
+  dd {
+    margin-left: 140px;
+  }
 }

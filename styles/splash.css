@@ -1,15 +1,4 @@
 @font-face {
-	font-family: 'CicleFina';
-	src: url('/fonts/Cicle/Cicle_Fina-webfont.eot');
-	src: url('/fonts/Cicle/Cicle_Fina-webfont.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/Cicle/Cicle_Fina-webfont.woff') format('woff'),
-	     url('/fonts/Cicle/Cicle_Fina-webfont.ttf') format('truetype');
-	     url('/fonts/Cicle/Cicle_Fina-webfont.svg#CicleFina') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
 	font-family: 'ChunkFiveRegular';
 	src: url('/fonts/Chunkfive/Chunkfive-webfont.eot');
 	src: url('/fonts/Chunkfive/Chunkfive-webfont.eot#iefix') format('embedded-opentype'),
@@ -30,10 +19,8 @@
  * Basic rules / tag overrides
  */
 body {
-
-	font-family: 'CicleFina',serif;
 	font-family: 'Open Sans', sans-serif;
-	background: url('/wordpress/wp-content/themes/steampunk/images/background.jpg') #1b1b1b repeat top;
+	background: url('/blog/wp-content/themes/steampunk/images/background.jpg') #1b1b1b repeat top;
 	color: #b4b4b4;
 	font-size: 14px;
 	font-weight: normal;
