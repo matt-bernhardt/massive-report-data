@@ -140,6 +140,10 @@
 					include ("includes/visualize_combinations.php");
 					break;
 
+				case "roster":
+					include ("includes/visualize_roster.php");
+					break;
+
 				case "standings":
 					include ("includes/visualize_standings.php");
 					break;
