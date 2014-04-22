@@ -1,11 +1,18 @@
 <?php
-  if(isset($_GET["season"])) {
-  	$reqData = "crew".$_GET["season"].".json";
+  if(isset($_GET["data"])) {
+  	$reqData = "crew".$_GET["data"].".json";
   } else {
-  	$reqData = "crew2014.json";
+  	$reqData = "crew12.json";
   }
 ?>
-<style type="text/css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Game-Player Combinations</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js" charset="utf-8"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<style type="text/css">
 * {
   padding: 0;
   margin: 0;
@@ -16,20 +23,11 @@ h1 {
   margin: 0 10px;
   color: #E3C803;
 }
-.node circle {
-  stroke: #1a1a1a;
-  stroke-width: 2px;
-}
-.node:hover circle {
-	stroke: #d9ad5b;
-}
-.node text {
-	display: none;
-	fill: #d9d9d9;
-}
-.node:hover text {
-	display: inherit;
-	fill: #d9ad5b;
+circle.node {
+/*
+  stroke: #fff;
+  stroke-width: 1.5px;
+*/
 }
 line.link {
   stroke: #999;
@@ -58,23 +56,26 @@ div#chart {
 	min-width: 2em;
 	text-align: right;
 }
-</style>
-	<h2>Player-Game Combinations</h2>
-	<p>The following force-directed graph shows the relationship between players and the games in which they appeared. Hover over any node in the graph to see more information. You can also adjust the slide controls at the bottom to alter the charge separating each node, and the default distance between them.</p>
-<div class='gallery' id='chart'> </div>
-<div class="control">
-	<label for="charge">Charge:
-		<input type="range" class="charge" name="charge" min="-300" max="0" value="-200">
-		<span class="value"></span>
-	</label>
-</div>
-<div class="control">
-	<label for="link">Link Distance:
-		<input type="range" class="link" name="link" min="0" max="100" value="75">
-		<span class="value"></span>
-	</label>
-</div>
-<input type="reset">
+	</style>
+  </head>
+
+  <body>
+  	<h2>Player-Game Combinations</h2>
+  	<p>The following force-directed graph shows the relationship between players and the games in which they appeared. Hover over any node in the graph to see more information. You can also adjust the slide controls at the bottom to alter the charge separating each node, and the default distance between them.</p>
+	<div class='gallery' id='chart'> </div>
+	<div class="control">
+		<label for="charge">Charge:
+			<input type="range" class="charge" name="charge" min="-300" max="0" value="-200">
+			<span class="value"></span>
+		</label>
+	</div>
+	<div class="control">
+		<label for="link">Link Distance:
+			<input type="range" class="link" name="link" min="0" max="100" value="75">
+			<span class="value"></span>
+		</label>
+	</div>
+	<input type="reset">
 <script>
 $(document).ready( function() {
 	$( '.control input' ).change(function() {
@@ -85,8 +86,8 @@ $(document).ready( function() {
 	var width = 960,
 	    height = 500;
 
-	var linkDistance = 75;
-	var charge = -200;
+	var linkDistance = 30;
+	var charge = -120;
 
 	var color = d3.scale.category20();
 
@@ -99,7 +100,7 @@ $(document).ready( function() {
 	    .attr("width", width)
 	    .attr("height", height);
 
-	d3.json("/fdg/<?php echo $reqData; ?>", function(error, graph) {
+	d3.json("<?php echo $reqData; ?>", function(error, graph) {
 	  force
 		.nodes(graph.nodes)
 		.links(graph.links)
@@ -113,23 +114,14 @@ $(document).ready( function() {
 
 	  var node = svg.selectAll(".node")
 		.data(graph.nodes)
-		.enter().append("g")
-		.attr("class","node")
+		.enter().append("circle")
+		.attr("class", "node")
+		.attr("r", 5)
+		.style("fill", function(d) { return color(d.group); })
 		.call(force.drag);
 
-		node.append("circle")
-		.attr("r", 5)
-		.style("fill", function(d) { return color(d.group); });
-
-		/*
 	  node.append("title")
 		.text(function(d) { return d.name; });
-		*/
-		
-	  node.append("text")
-	  	.attr("dx", 12)
-	  	.attr("dy", "0.25em")
-	  	.text(function(d) { return d.name });
 
 	  force.on("tick", function() {
 	    link.attr("x1", function(d) { return d.source.x; })
@@ -137,7 +129,8 @@ $(document).ready( function() {
 	        .attr("x2", function(d) { return d.target.x; })
 	        .attr("y2", function(d) { return d.target.y; });
 
-	    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+	    node.attr("cx", function(d) { return d.x; })
+	        .attr("cy", function(d) { return d.y; });
 	  });
 
 	  d3.select("input[name=charge]").on("change", function() {
@@ -165,3 +158,5 @@ $(document).ready( function() {
 });
 </script>
 <p class="builtwith">Built with <a href="http://d3js.org/">d3.js</a>, a project by <a href="http://bost.ocks.org/mike/">Mike Bostock</a>.</p>
+  </body>
+</html>

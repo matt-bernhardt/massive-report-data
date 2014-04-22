@@ -1,6 +1,6 @@
 <?php
 	$strPageTitle = "Massive Report > Data > Browse Games";
-	include_once('/includes/block_header.php');
+	include_once('../includes/block_header.php');
 
 	$sql = "SELECT date_format(MatchTime,'%c/%e/%Y') AS MatchDate, h.teamname, a.teamname, t.id, t.MatchType, if(HteamID = 11, a.team3ltr, concat('@ ',h.team3ltr)	) AS Opp, Concat(HScore,' - ',Ascore) AS Score ";
 	$sql .= "FROM tbl_games g ";
@@ -10,7 +10,7 @@
 	$sql .= "WHERE HteamID = 11 OR AteamID = 11 ";
 	$sql .= "ORDER BY MatchTime ASC";
 
-	$games = mysql_query($sql, $connection) or die(mysql_error());
+	$games = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$sql = "SELECT t.id, MatchType ";
 	$sql .= "FROM tbl_games g ";
@@ -19,7 +19,7 @@
 	$sql .= "GROUP BY t.id ";
 	$sql .= "ORDER BY MatchType ASC";
 
-	$competitions = mysql_query($sql, $connection) or die(mysql_error());
+	$competitions = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 ?>
   <h1>Browse Games</h1>
@@ -30,7 +30,7 @@
       <ul id="filters" class="filter option-set clearfix" data-option-key="filter">
 		<li><a href="#filter" data-option-value="*" class="selected">Show All</a></li>
 <?php
-	while($row = @mysql_fetch_array($competitions,MYSQL_ASSOC)) { ?>
+	while($row = @mysqli_fetch_array($competitions,MYSQLI_ASSOC)) { ?>
 		<li><a href="#filter" data-option-value=".g<?php echo $row['id']; ?>"><?php echo $row['id']; ?></a></li>
 <?php
 	}
@@ -41,7 +41,7 @@
   <div id="container" class="clearfix">
 
 <?php
-	while($row = @mysql_fetch_array($games,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($games,MYSQLI_ASSOC)) {
 ?>
     <div class="element g<?php echo $row['id']; ?>" data-symbol="<?php echo $row['Opp']; ?>" data-category="transition">
       <p class="number"><?php echo $row['MatchType']; ?></p>
@@ -128,7 +128,7 @@
     	Built with <a href="http://isotope.metafizzy.co/index.html">Isotope</a>, a project by <a href="http://desandro.com">David DeSandro</a> / <a href="http://metafizzy.co">Metafizzy</a>
     </p>
 <?php
-  include_once('/includes/block_footer.php');
+  include_once('../includes/block_footer.php');
 ?>
 
 
