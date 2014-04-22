@@ -14,7 +14,7 @@
 	."HAVING LastTeam = '0011' "
 	."ORDER BY LastName, FirstName ASC";
 
-	$players = mysql_query($sql, $connection) or die(mysql_error());
+	$players = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$showDate = date("F j, Y",strtotime($inputDate));
 
@@ -25,7 +25,7 @@
 
 	$longPageContent .= '<div id="roster" class="clearfix" style="margin-left: -10px; width:980px;">';
 
-	while($row = @mysql_fetch_array($players,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($players,MYSQLI_ASSOC)) {
 		$longPageContent .= '<div itemscope itemtype="http://schema.org/Person" class="player">';
 		$longPageContent .= '<span class="jersey">'.$row['RosterNumber'].'</span>';
 		$longPageContent .= '<a itemscope itemtype="http://schema.org/Person" itemprop="url" title="'.$row['PlayerName'].'" data-category="transition" href="/player/'.$row['ID'].'">';

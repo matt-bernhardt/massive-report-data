@@ -3,6 +3,7 @@
 	$strMenuGroup = "Seasons";
 
 	$boolTabs = TRUE;
+	$boolD3 = TRUE;
 
 	$strJavascript = "jquery.hash.season.js";
 

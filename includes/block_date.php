@@ -24,14 +24,14 @@
 	$sql .= "  AND (DAY(MatchTime) = ".$intDay." AND MONTH(MatchTime) = ".$intMonth.") ";
 	$sql .= "ORDER BY MatchTime ASC";
 
-	$dates = mysql_query($sql, $connection) or die(mysql_error());
+	$dates = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$sql = "SELECT ID, YEAR(DOB) AS BirthYear, CONCAT(FirstName,' ',LastName) AS PlayerName, Position ";
 	$sql .= "FROM tbl_players p ";
 	$sql .= "WHERE (DAY(DOB) = ".$intDay." AND MONTH(DOB) = ".$intMonth.") ";
 	$sql .= "ORDER BY Year(DOB) DESC";
 
-	$players = mysql_query($sql, $connection) or die(mysql_error());
+	$players = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$longPageContent = '<h1>Today in Crew History: '.$strMonth.' '.$intDay.'</h1>';
 
@@ -45,7 +45,7 @@
 	$longPageContent .= '<th scope="col">Competition</th>';
 	$longPageContent .= '</tr></thead><tbody>';
 
-	while($row = @mysql_fetch_array($dates,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($dates,MYSQLI_ASSOC)) {
 		$longPageContent .= '<tr>';
 		$longPageContent .= '<td><a href="/game/'.$row['GameID'].'">'.$row['MatchYear'].'</a></td>';
 		$longPageContent .= '<td>'.$row['HomeTeam'].'</td>';
@@ -66,7 +66,7 @@
 	$sql .= 'LEFT OUTER JOIN tbl_teams ta on c.LastTeamID = ta.ID ';
 	$sql .= 'WHERE (LastTeamID = 11 OR TeamID = 11) AND (day(SigningDate) = '.$intDay.' and month(SigningDate) = '.$intMonth.') ';
 	$sql .= 'ORDER BY year(SigningDate)';
-	$transactions = mysql_query($sql, $connection) or die(mysql_error());
+	$transactions = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 	$longPageContent .= '<h2>Transactions</h2>';
 	$longPageContent .= '<table><thead><tr>';
 	$longPageContent .= '<th scope="col">Year</th>';
@@ -75,7 +75,7 @@
 	$longPageContent .= '<th scope="col">New Team</th>';
 	$longPageContent .= '<th scope="col">Notes</th>';
 	$longPageContent .= '</tr></thead><tbody>';
-	while($row = @mysql_fetch_array($transactions,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($transactions,MYSQLI_ASSOC)) {
 		$longPageContent .= '<tr>';
 		$longPageContent .= '<td>'.$row['SigningDate'].'</td>';
 		$longPageContent .= '<td><a href="/player/'.$row['PlayerID'].'">'.$row['PlayerName'].'</a></td>';
@@ -97,7 +97,7 @@
 	$longPageContent .= '<th scope="col">Position</th>';
 	$longPageContent .= '</tr></thead><tbody>';
 
-	while($row = @mysql_fetch_array($players,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($players,MYSQLI_ASSOC)) {
 		$longPageContent .= '<tr>';
 		$longPageContent .= '<td>'.$row['BirthYear'].'</td>';
 		$longPageContent .= '<td><a href="/player/'.$row['ID'].'">'.$row['PlayerName'].'</a></td>';

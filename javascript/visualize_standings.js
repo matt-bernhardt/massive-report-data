@@ -17,10 +17,10 @@ $(function () {
 	$sql .= "FROM tbl_teams ";
 	$sql .= "WHERE League = 'MLS' ";
 	$sql .= "ORDER BY teamname";
-	$rs = mysql_query($sql, $connection) or die(mysql_error());
+	$rs = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 	$x = 0;
 	$y = 0;
-	while($row = @mysql_fetch_array($rs, MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($rs, MYSQLI_ASSOC)) {
 		$intTeamID = $row['id'];
 		$strTeamName = $row['teamname'];
 		if($row['Conference'] == "Eastern"){
@@ -28,9 +28,9 @@ $(function () {
 			$arrEastJSON[$x]['color'] = '#444';
 			$sql = "SELECT SUM(IF(HTeamID = ".$intTeamID.",IF(HScore>AScore,1,0),IF(AScore>HScore,1,0))) AS Wins, SUM(IF(HScore=AScore,1,0)) AS Ties, SUM(IF(HTeamID = ".$intTeamID.",IF(HScore<Ascore,1,0),IF(AScore<HScore,1,0))) AS Losses ";
 			$sql .= "FROM tbl_games ";
-			$sql .= "WHERE YEAR(matchTime) = 2013 AND MatchTime < NOW() AND MatchTypeID = 21 AND (HTeamID = ".$intTeamID." OR ATeamID = ".$intTeamID.")";
-			$rs1 = mysql_query($sql, $connection) or die(mysql_error());
-			while($row1 = @mysql_fetch_array($rs1, MYSQL_ASSOC)){			
+			$sql .= "WHERE YEAR(matchTime) = 2014 AND MatchTime < NOW() AND MatchTypeID = 21 AND (HTeamID = ".$intTeamID." OR ATeamID = ".$intTeamID.")";
+			$rs1 = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+			while($row1 = @mysqli_fetch_array($rs1, MYSQLI_ASSOC)){			
 				$intGP =  $row1['Wins']+$row1['Ties']+$row1['Losses'];
 				$intPoints = ($row1['Wins']*3)+$row1['Ties'];
 				$intMaxPoints = $intPoints + (3*(34-$intGP));
@@ -44,9 +44,9 @@ $(function () {
 			$arrWestJSON[$y]['color'] = '#444';
 			$sql = "SELECT SUM(IF(HTeamID = ".$intTeamID.",IF(HScore>AScore,1,0),IF(AScore>HScore,1,0))) AS Wins, SUM(IF(HScore=AScore,1,0)) AS Ties, SUM(IF(HTeamID = ".$intTeamID.",IF(HScore<Ascore,1,0),IF(AScore<HScore,1,0))) AS Losses ";
 			$sql .= "FROM tbl_games ";
-			$sql .= "WHERE YEAR(matchTime) = 2013 AND MatchTime < NOW() AND MatchTypeID = 21 AND (HTeamID = ".$intTeamID." OR ATeamID = ".$intTeamID.")";
-			$rs1 = mysql_query($sql, $connection) or die(mysql_error());
-			while($row1 = @mysql_fetch_array($rs1, MYSQL_ASSOC)){
+			$sql .= "WHERE YEAR(matchTime) = 2014 AND MatchTime < NOW() AND MatchTypeID = 21 AND (HTeamID = ".$intTeamID." OR ATeamID = ".$intTeamID.")";
+			$rs1 = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+			while($row1 = @mysqli_fetch_array($rs1, MYSQLI_ASSOC)){
 				$intGP =  $row1['Wins']+$row1['Ties']+$row1['Losses'];
 				$intPoints = ($row1['Wins']*3)+$row1['Ties'];
 				$intMaxPoints = $intPoints + (3*(34-$intGP));

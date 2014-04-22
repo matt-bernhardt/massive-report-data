@@ -27,7 +27,7 @@
 	$sql .= "LEFT OUTER JOIN tbl_teams h ON g.HTeamID = h.ID  ";
 	$sql .= "LEFT OUTER JOIN tbl_teams a ON g.ATeamID = a.ID  ";
 	$sql .= "WHERE (HteamID = 11 OR ATeamID = 11) AND MatchTypeID = 21 and MatchTime < now() ORDER BY MatchTime ASC";
-	$points = mysql_query($sql, $connection) or die(mysql_error());
+	$points = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 	
 	$longPageContent = '<h1>History Chase by '.$strBy.'</h1>';
 	$longPageContent .= '<ul class="inline clearfix"><li><a class="selected" href="/visualize/chase/'.$strBy.'">vs. History</a></li><li><a href="/visualize/chase_mls/'.$strBy.'">vs. League</a></li></ul>';

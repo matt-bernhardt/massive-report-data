@@ -6,18 +6,32 @@
 	// Define needed js libraries
 
 
+	$sql = "SELECT date_format(MatchTime, '%c/%e/%Y') AS MatchTime, h.TeamID AS HomeID, h.teamname AS HomeTeam, HScore AS HomeScore, a.TeamID AS AwayID, a.teamname AS AwayTeam, AScore AS AwayScore, Attendance, t.MatchType, g.VenueID, v.VenueName "
+	."FROM tbl_games g "
+	."LEFT OUTER JOIN tbl_team_identities h ON g.HTeamID = h.TeamID "
+	."LEFT OUTER JOIN tbl_team_identities a ON g.ATeamID = a.TeamID "
+	."LEFT OUTER JOIN lkp_matchtypes t ON g.MatchTypeID = t.ID "
+	."LEFT OUTER JOIN tbl_venues v ON g.VenueID = v.ID "
+	."WHERE g.ID = ".$intGameID." AND h.Effective < g.MatchTime AND a.Effective < g.MatchTime "
+	."ORDER BY h.Effective DESC, a.Effective DESC "
+	."LIMIT 0,1";
 
-	$sql = "SELECT date_format(MatchTime, '%c/%e/%Y') AS MatchTime, h.ID AS HomeID, h.teamname AS HomeTeam, HScore AS HomeScore, a.ID AS AwayID, a.teamname AS AwayTeam, AScore AS AwayScore, Attendance, t.MatchType, g.VenueID, v.VenueName ";
-	$sql .= "FROM tbl_games g ";
-	$sql .= "LEFT OUTER JOIN tbl_teams h ON g.HTeamID = h.ID ";
-	$sql .= "LEFT OUTER JOIN tbl_teams a ON g.ATeamID = a.ID ";
-	$sql .= "LEFT OUTER JOIN lkp_matchtypes t ON g.MatchTypeID = t.ID ";
-	$sql .= "LEFT OUTER JOIN tbl_venues v ON g.VenueID = v.ID ";
-	$sql .= "WHERE g.ID = ".$intGameID;
+	$game = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
-	$game = mysql_query($sql, $connection) or die(mysql_error());
+	// Games with opponents not listed in tbl_team_identities will need alternate/old SQL
+	if(mysqli_num_rows($game)==0){
+		$sql = "SELECT date_format(MatchTime, '%c/%e/%Y') AS MatchTime, h.ID AS HomeID, h.teamname AS HomeTeam, HScore AS HomeScore, a.ID AS AwayID, a.teamname AS AwayTeam, AScore AS AwayScore, Attendance, t.MatchType, g.VenueID, v.VenueName "
+			."FROM tbl_games g "
+			."LEFT OUTER JOIN tbl_teams h ON g.HTeamID = h.ID "
+			."LEFT OUTER JOIN tbl_teams a ON g.ATeamID = a.ID "
+			."LEFT OUTER JOIN lkp_matchtypes t ON g.MatchTypeID = t.ID "
+			."LEFT OUTER JOIN tbl_venues v ON g.VenueID = v.ID "
+			."WHERE g.ID = ".$intGameID." "
+			."LIMIT 0,1";
+		$game = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+	}
 
-	while($row = @mysql_fetch_array($game,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($game,MYSQLI_ASSOC)) {
 		$datMatchDate = $row['MatchTime'];
 		$intHomeID = $row['HomeID'];
 		$strHomeTeam = $row['HomeTeam'];
@@ -50,12 +64,16 @@
 	$sql .= "LEFT OUTER JOIN tbl_players p ON m.PlayerID = p.ID ";
 	$sql .= "WHERE GameID = ".$intGameID." AND TeamID = ".$intHomeID." ";
 	$sql .= "ORDER BY TimeOn, (CASE POSITION WHEN 'Goalkeeper' THEN 0 WHEN 'Defender' THEN 1 WHEN 'Midfielder' THEN 2 WHEN 'Forward' THEN 3 END)";
-	$home = mysql_query($sql, $connection) or die(mysql_error());
+	$home = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 	$longPageContent .= '<div id="homeroster">';
-	$longPageContent .= '<h2>'.$strHomeTeam.'</h2>';
+	if($intHomeID==11){
+		$longPageContent .= '<h2>'.$strHomeTeam.'</h2>';
+	} else {
+		$longPageContent .= '<h2><a href="/opponent/'.$intHomeID.'">'.$strHomeTeam.'</a></h2>';
+	}
 	$longPageContent .= '<table><thead><tr><th scope="col">Player</th><th scope="col">Position</th><th scope="col">On</th><th scope="col">Off</th></tr></thead>';
 	$longPageContent .= '<tbody>';
-	while($row = @mysql_fetch_array($home,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($home,MYSQLI_ASSOC)) {
 		$longPageContent .= '<tr>';
 		$longPageContent .= '<td><a href="/player/'.$row['PlayerID'].'">'.$row['PlayerName'].'</a></td>';
 		$longPageContent .= '<td>'.$row['Position'].'</td>';
@@ -73,12 +91,17 @@
 	$sql .= "LEFT OUTER JOIN tbl_players p ON m.PlayerID = p.ID ";
 	$sql .= "WHERE GameID = ".$intGameID." AND TeamID = ".$intAwayID." ";
 	$sql .= "ORDER BY TimeOn, (CASE POSITION WHEN 'Goalkeeper' THEN 0 WHEN 'Defender' THEN 1 WHEN 'Midfielder' THEN 2 WHEN 'forward' THEN 3 END)";
-	$away = mysql_query($sql, $connection) or die(mysql_error());
+	$away = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 	$longPageContent .= '<div id="awayroster">';
-	$longPageContent .= '<h2>'.$strAwayTeam.'</h2>';
+	if($intHomeID==11){
+		$longPageContent .= '<h2><a href="/opponent/'.$intAwayID.'">'.$strAwayTeam.'</a></h2>';
+	} else {
+		$longPageContent .= '<h2>'.$strAwayTeam.'</h2>';
+	}
+
 	$longPageContent .= '<table><thead><tr><th scope="col">Player</th><th scope="col">Position</th><th scope="col">On</th><th scope="col">Off</th></tr></thead>';
 	$longPageContent .= '<tbody>';
-	while($row = @mysql_fetch_array($away,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($away,MYSQLI_ASSOC)) {
 		$longPageContent .= '<tr>';
 		$longPageContent .= '<td><a href="/player/'.$row['PlayerID'].'">'.$row['PlayerName'].'</a></td>';
 		$longPageContent .= '<td>'.$row['Position'].'</td>';
@@ -99,7 +122,7 @@
 	$sql .= "left outer join tbl_players p on e.PlayerID = p.ID ";
 	$sql .= "where GameID = ".$intGameID." ";
 	$sql .= "order by MinuteID";
-	$events = mysql_query($sql, $connection) or die(mysql_error());
+	$events = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 	$longPageContent .= '<div id="timeline">';
 	$longPageContent .= '<h2>Events</h2>';
 	$longPageContent .= '<table><thead><tr>';
@@ -109,7 +132,7 @@
 	$longPageContent .= '<th scope="col">Team</th>';
 	$longPageContent .= '<th scope="col">Notes</th>';
 	$longPageContent .= '</thead>';
-	while($row = @mysql_fetch_array($events,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($events,MYSQLI_ASSOC)) {
 		$longPageContent .= '<tr>';
 		$longPageContent .= "<td>".$row['MinuteID']."'</td>";
 		$longPageContent .= '<td>'.$row['Event'].'</td>';

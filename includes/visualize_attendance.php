@@ -15,7 +15,7 @@
 	$sql .= "  AND MatchTypeID = 21 ";
 	$sql .= "  AND MatchTime < now() ";
 	$sql .= "ORDER BY MatchTime ASC ";
-	$attendance = mysql_query($sql, $connection) or die(mysql_error());
+	$attendance = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$longPageContent = '<h1>Attendance Charts</h1>';
 	$longPageContent .= '<p>This chart plots home attendance, grouped by game number. Use the controls to select which seasons to display. Hover over any point to see more information about that game.</p>';

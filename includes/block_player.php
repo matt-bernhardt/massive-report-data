@@ -13,9 +13,9 @@
 		$sql .= "FROM tbl_players ";
 		$sql .= "WHERE ID = ".$intPlayerID;
 
-		$player = mysql_query($sql, $connection) or die(mysql_error());
+		$player = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
-		while($row = @mysql_fetch_array($player,MYSQL_ASSOC)) {
+		while($row = @mysqli_fetch_array($player,MYSQLI_ASSOC)) {
 			$strPlayerName = $row['FirstName']." ".$row['LastName'];
 			$strLineChartImage = $row['LastName']."_".$row['FirstName']."_".$intPlayerID.".gif";
 			$strPosition = $row['Position'];
@@ -39,7 +39,7 @@
 		$sql .= "WHERE playerID = ".$intPlayerID." ";
 		$sql .= "ORDER BY SortDate ASC";
 
-		$contracts = mysql_query($sql, $connection) or die(mysql_error());
+		$contracts = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 		$strPageTitle .= " > ".$strPlayerName;
 
@@ -79,7 +79,7 @@
 		// Contracts tab
 		$longPageContent .= '<div id="tabs-2">';
 		$longPageContent .= '<table><thead><tr><th scope="col">Date</th><th scope="col">Team</th><th scope="col">Notes</th></tr></thead><tbody>';
-		while($row = @mysql_fetch_array($contracts,MYSQL_ASSOC)) {
+		while($row = @mysqli_fetch_array($contracts,MYSQLI_ASSOC)) {
 			$longPageContent .= '<tr>';
 			$longPageContent .= '<td>'.$row['SigningDate'].'</td>';
 			$longPageContent .= '<td>'.$row['Teamname'].'</td>';
@@ -98,7 +98,7 @@
 		$sql .= 'LEFT OUTER JOIN tbl_teams t ON s.TeamID = t.ID ';
 		$sql .= 'WHERE s.PlayerID = '.$intPlayerID.' ';
 		$sql .= 'ORDER BY Year, teamname, Competition';
-		$statsyear = mysql_query($sql, $connection) or die(mysql_error());
+		$statsyear = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 		$longPageContent .= '<div id="tabs-4">';
 		$longPageContent .= '<table><thead><tr>';
 		$longPageContent .= '<th scope="col">Year</th>';
@@ -109,7 +109,7 @@
 		$longPageContent .= '<th scope="col">Min</th>';
 		$longPageContent .= '<th scope="col">G</th>';
 		$longPageContent .= '</tr></thead><tbody>';
-		while($row = @mysql_fetch_array($statsyear,MYSQL_ASSOC)) {
+		while($row = @mysqli_fetch_array($statsyear,MYSQLI_ASSOC)) {
 			$longPageContent .= '<tr>';
 			$longPageContent .= '<td>'.$row['Year'].'</td>';
 			$longPageContent .= '<td><a href="/team/'.$row['TeamID'].'">'.$row['teamname'].'</a></td>';

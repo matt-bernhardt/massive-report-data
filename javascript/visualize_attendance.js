@@ -6,7 +6,7 @@
 	$sql .= "  AND MatchTypeID = 21 ";
 	$sql .= "  AND MatchTime < now() ";
 	$sql .= "ORDER BY MatchTime ASC ";
-	$attendance = mysql_query($sql, $connection) or die(mysql_error());
+	$attendance = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 ?>
 <script language="javascript" type="text/javascript">
 $(function () {
@@ -16,7 +16,7 @@ $(function () {
 	$intX = 1;
 	$intSeason = 0;
 	$intFirstSeason = 1;
-	while($row = @mysql_fetch_array($attendance, MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($attendance, MYSQLI_ASSOC)) {
 
 		if($intSeason<>$row['Season']){
 			if ($intFirstSeason==1) {
@@ -144,7 +144,7 @@ $(function () {
     var games = [
 <?php
 	$intX = 1;
-	while($row = @mysql_fetch_array($attendance, MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($attendance, MYSQLI_ASSOC)) {
 		print "[".$intX.",".$row['attendance'].",'".$row['MatchDate']."','".$row['FormatAttendance']."','".$row['Opponent']."'],";
 		$intX = $intX + 1;
 	}

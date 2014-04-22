@@ -5,13 +5,13 @@
 			$(".filter a").removeClass("selected");
 			$this.addClass("selected");
 			var target = $this.attr("data-filter-value");
-			// alert("looking for "+target);
 			if(target){
 				$("#container a").addClass("hideme");
-				$("#container a."+target).removeClass("hideme");
+				$("#container a"+target).removeClass("hideme");
 			} else {
 				$("#container a").removeClass("hideme");
 			}
+
 			return false;
 		});
 	});

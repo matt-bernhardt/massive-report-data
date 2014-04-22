@@ -3,6 +3,7 @@
 	$strMenuGroup = "Players";
 
 	$boolTabs = TRUE;
+	$boolD3 = TRUE;
 
 	$strJavascript = "jquery.hash.player.js";
 
@@ -13,16 +14,21 @@
 
 	} else {
 
-		$sql = "SELECT FirstName, LastName, Position ";
+		$sql = "SELECT FirstName, LastName, Position, Citizenship, DOB ";
 		$sql .= "FROM tbl_players ";
 		$sql .= "WHERE ID = ".$intPlayerID;
 
-		$player = mysql_query($sql, $connection) or die(mysql_error());
+		$player = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
-		while($row = @mysql_fetch_array($player,MYSQL_ASSOC)) {
+		while($row = @mysqli_fetch_array($player,MYSQLI_ASSOC)) {
 			$strPlayerName = $row['FirstName']." ".$row['LastName'];
 			$strPosition = $row['Position'];
+			$strCitizenship = $row['Citizenship'];
+			$strDOB = $row['DOB'];
 		}
+
+		$sql = "SELECT URL, Title FROM tbl_url WHERE PlayerID = ".$intPlayerID;
+		$url = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 		$strPageTitle .= ' > '.$strPlayerName;
 		
@@ -30,6 +36,14 @@
 		$longPageContent .= '<div id="player" class="'.$intPlayerID.'">';
 		$longPageContent .= "<h1 itemprop=\"name\">".$strPlayerName."</h1>";
 		$longPageContent .= "<p itemprop=\"jobTitle\">".$strPosition."</p>";
+
+		$longPageContent .= "<div class=\"semantic\">";
+		$longPageContent .= "<div itemprop=\"nationality\">".$strCitizenship."</div>";
+		$longPageContent .= "<div itemprop=\"birthDate\">".$strDOB."</div>";
+		while($row = @mysqli_fetch_array($url,MYSQLI_ASSOC)) {
+			$longPageContent .= "<div itemprop=\"sameAs\">".$row['URL']."</div>";
+		}
+		$longPageContent .= "</div>";
 
 		$longPageContent .= '<ul>';
 		$longPageContent .= '<li><a href="#overview">Overview</a></li>';

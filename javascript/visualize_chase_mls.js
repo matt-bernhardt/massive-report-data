@@ -11,10 +11,10 @@ var datasets = {
 	$sql = "SELECT DISTINCT HTeamID, t.Team3Ltr ";
 	$sql .= "FROM tbl_games g ";
 	$sql .= "LEFT OUTER JOIN tbl_teams t ON g.HTeamID = t.ID ";
-	$sql .= "WHERE MatchTypeID = 21 AND YEAR(MatchTime) = 2013 ";
+	$sql .= "WHERE MatchTypeID = 21 AND YEAR(MatchTime) = 2014 ";
 	$sql .= "ORDER BY Team3Ltr ASC";
-	$teams = mysql_query($sql, $connection) or die(mysql_error());
-	while($row = @mysql_fetch_array($teams, MYSQL_ASSOC)) {
+	$teams = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+	while($row = @mysqli_fetch_array($teams, MYSQLI_ASSOC)) {
 	
 		//if this isn't the first team, then print a comma to start
 		if($boolFirstTeam) {
@@ -26,7 +26,7 @@ var datasets = {
 		$intTeamID = $row['HTeamID'];
 		$strTeamAbbv = $row['Team3Ltr'];
 		if($intTeamID == 11){
-			$strSeriesName = "2013";
+			$strSeriesName = "2014";
 		} else {
 			$strSeriesName = $strTeamAbbv;
 		}
@@ -39,16 +39,16 @@ var datasets = {
 		$sql .= "FROM tbl_games g ";
 		$sql .= "LEFT OUTER JOIN tbl_teams h ON g.HTeamID = h.ID ";
 		$sql .= "LEFT OUTER JOIN tbl_teams a ON g.ATeamID = a.ID ";
-		$sql .= "WHERE (HteamID = ".$intTeamID." OR ATeamID = ".$intTeamID.") AND MatchTypeID = 21 AND MatchTime < NOW() AND YEAR(matchtime) = 2013 ";
+		$sql .= "WHERE (HteamID = ".$intTeamID." OR ATeamID = ".$intTeamID.") AND MatchTypeID = 21 AND MatchTime < NOW() AND YEAR(matchtime) = 2014 ";
 		$sql .= "ORDER BY MatchTime ASC";
-		$games = mysql_query($sql,$connection) or die(mysql_error());
+		$games = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 		$intX = 1;
 		$intPoints = 0;
 		$intWin = 0;
 		$intTie = 0;
 		$intLoss = 0;
 		$boolFirstGame = true;
-		while($row2 = @mysql_fetch_array($games, MYSQL_ASSOC)) {
+		while($row2 = @mysqli_fetch_array($games, MYSQLI_ASSOC)) {
 			
 			if($boolFirstGame) {
 				$boolFirstGame = false;
@@ -240,7 +240,7 @@ var datasets = {
     var games = [
 <?php
 	$intX = 1;
-	while($row = @mysql_fetch_array($attendance, MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($attendance, MYSQLI_ASSOC)) {
 		print "[".$intX.",".$row['attendance'].",'".$row['MatchDate']."','".$row['FormatAttendance']."','".$row['Opponent']."'],";
 		$intX = $intX + 1;
 	}

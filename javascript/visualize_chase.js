@@ -6,7 +6,7 @@ var datasets = {
 	$intX = 1;
 	$intSeason = 0;
 	$intFirstSeason = 1;
-	while($row = @mysql_fetch_array($points, MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($points, MYSQLI_ASSOC)) {
 
 
 		if($intSeason<>$row['Season']){
@@ -196,7 +196,7 @@ var datasets = {
     var games = [
 <?php
 	$intX = 1;
-	while($row = @mysql_fetch_array($attendance, MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($attendance, MYSQLI_ASSOC)) {
 		print "[".$intX.",".$row['attendance'].",'".$row['MatchDate']."','".$row['FormatAttendance']."','".$row['Opponent']."'],";
 		$intX = $intX + 1;
 	}

@@ -1,5 +1,5 @@
 <?php
 	//disconnect from db
-	mysql_close($connection);
+	mysqli_close($connection);
 
 ?>

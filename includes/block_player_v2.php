@@ -39,9 +39,9 @@
 		$sql .= "FROM tbl_players ";
 		$sql .= "WHERE ID = ".$intPlayerID;
 
-		$player = mysql_query($sql, $connection) or die(mysql_error());
+		$player = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
-		while($row = @mysql_fetch_array($player,MYSQL_ASSOC)) {
+		while($row = @mysqli_fetch_array($player,MYSQLI_ASSOC)) {
 			$strPlayerName = $row['FirstName']." ".$row['LastName'];
 			$strPosition = $row['Position'];
 		}

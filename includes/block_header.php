@@ -12,8 +12,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script type="text/javascript" src="/javascript/jquery.ba-hashchange.js"></script>
 <?php
 	if(isset($boolIsotope) && $boolIsotope == TRUE) {
@@ -46,7 +46,7 @@
 	if(isset($boolTabs) && $boolTabs==TRUE){
 ?>
 	<script src="/javascript/jquery-ui-1.8.21.custom.min.js"></script>
-    <script src="javascript/jquery.ba-bbq.js"></script>
+  <script src="/javascript/jquery.ba-bbq.js"></script>
 	<link href="/styles/vader/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css">
 <?php
 	}

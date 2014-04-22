@@ -14,7 +14,7 @@
 	$sql .= "GROUP BY tbl_players.ID ";
 	$sql .= "ORDER BY lastName ASC";
 
-	$players = mysql_query($sql, $connection) or die(mysql_error());
+	$players = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$longPageContent = '<h1>Player Explorer</h1>';
 	$longPageContent .= '<p class="clearboth">Welcome to the all-time Columbus roster. You can filter the players below according to several criteria.</p>';
@@ -24,8 +24,8 @@
 	$longPageContent .= '<h2>Season</h2>';
 	$longPageContent .= '<ul class="filter option-set clearfix" data-filter-group="year">';
 	$longPageContent .= '<li><a href="#filter-year-any" data-filter-value="" class="selected">Show All</a></li>';
-	for ($i = 1996; $i <= 2013; $i++) {
-		if($i==2012){$strClass='';}else{$strClass="";}
+	for ($i = 1996; $i <= 2014; $i++) {
+		if($i==2014){$strClass='';}else{$strClass="";}
 		$longPageContent .= '<li><a href="#filter-year-'.$i.'" data-filter-value=".'.$i.'"'.$strClass.'>'.$i.'</a></li>';
 	}
 	$longPageContent .= '</ul>';
@@ -45,7 +45,7 @@
 	$longPageContent .= '</section>';
 	$longPageContent .= '<div id="container" class="clearfix" style="margin-left: -10px; width:980px;">';
 
-	while($row = @mysql_fetch_array($players,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($players,MYSQLI_ASSOC)) {
 		switch ($row['Pos']) {
 			case 'Goa':
 				$strPos = "gk";

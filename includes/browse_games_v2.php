@@ -13,7 +13,7 @@
 	$sql .= "LEFT OUTER JOIN lkp_matchtypes t ON g.MatchTypeID = t.ID ";
 	$sql .= "WHERE (HteamID = 11 OR AteamID = 11) AND g.MatchTypeID <> 3 ";
 	$sql .= "ORDER BY MatchTime ASC";
-	$games = mysql_query($sql, $connection) or die(mysql_error());
+	$games = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$sql = "SELECT t.id, MatchType ";
 	$sql .= "FROM tbl_games g ";
@@ -21,7 +21,7 @@
 	$sql .= "WHERE (HteamID = 11 OR AteamID = 11) AND g.MatchTypeID <> 3 ";
 	$sql .= "GROUP BY t.id ";
 	$sql .= "ORDER BY MatchType ASC";
-	$competitions = mysql_query($sql, $connection) or die(mysql_error());
+	$competitions = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$longPageContent = '<h1>Game Explorer</h1>';
 	$longPageContent .= '<p class="clearboth">Welcome to the all-time Columbus schedule. You can filter the games below according to several criteria.</p>';
@@ -43,8 +43,8 @@
 	$longPageContent .= '<h2>Year</h2>';
 	$longPageContent .= '<ul class="filter option-set clearfix" data-filter-group="season">';
 	$longPageContent .= '<li><a href="#filter-season-any" data-filter-value="" class="selected">Show All</a></li>';
-	for ($i = 1996; $i <= 2013; $i++) {
-		if($i==2012){$strClass='';}else{$strClass="";}
+	for ($i = 1996; $i <= 2014; $i++) {
+		if($i==2014){$strClass='';}else{$strClass="";}
 		$longPageContent .= '<li><a href="#filter-season-s'.$i.'" data-filter-value=".s'.$i.'"'.$strClass.'>'.$i.'</a></li>';
 	}
 	$longPageContent .= '</ul>';
@@ -53,7 +53,7 @@
 	$longPageContent .= '</section>';
 	$longPageContent .= '<div id="container" class="clearfix" style="margin-left: -10px; width:980px;">';
 
-	while($row = @mysql_fetch_array($games,MYSQL_ASSOC)) {
+	while($row = @mysqli_fetch_array($games,MYSQLI_ASSOC)) {
 
 		switch($row['id']) {
 			case '21':
