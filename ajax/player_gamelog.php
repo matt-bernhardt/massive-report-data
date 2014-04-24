@@ -41,7 +41,7 @@
 		.append("svg:svg")
 		.attr("width",w);
 
-	d3.json("/api/gamelog_oo.php?term=<?php echo $intPlayerID; ?>", function(error, json) {
+	d3.json("/api/gamelog.php?term=<?php echo $intPlayerID; ?>", function(error, json) {
 		if(error) {
 			console.log(error);
 		}
