@@ -26,20 +26,26 @@ class Base
 	{
 		if ($_SERVER['HTTP_HOST'] == 'mrdata') {
 			//local settings
-			$db_host = 'localhost:3306';
+			$db_host = 'localhost';
 			$db_database = 'scouting';
 			$db_username = 'root';
 			$db_password = 'jvct120sx';
 		} else {
 			//production settings
-			$db_host = 'massivereportdatacom.fatcowmysql.com:3306';
+			$db_host = 'massivereportdatacom.fatcowmysql.com';
 			$db_database = 'scouting';
 			$db_username = 'website';
 			$db_password = 'gEya6hak';
 		}
 		//connect to db
-		$this->connection = mysqli_connect($db_host, $db_username, $db_password);
-		mysqli_select_db($this->connection,$db_database) or die('Could not select database');
+		try {
+			$this->connection = mysqli_connect($db_host, $db_username, $db_password, $db_database, 3306);
+		} catch (Exception $e) {
+		}
+		mysqli_select_db($this->connection,$db_database);
+		if (mysqli_connect_errno()) {
+			printf("Connect failed: %s\n",mysqli_connect_error());
+		}
 	}
 
 	public function renderJSON()
