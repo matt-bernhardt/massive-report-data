@@ -13,7 +13,6 @@ class Roster extends Base
 		$this->setTeam();
 		$this->setYear();
 		$this->setPlayerList();
-		$this->renderJSON();
 	}
 
 	public function __destruct()

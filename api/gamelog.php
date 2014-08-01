@@ -6,14 +6,12 @@ class Career extends Base
 {
 
 	public $playerID;
-	public $games = array();
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->setPlayer();
 		$this->setDateRange();
-		$this->renderJSON();		
 	}
 
 	public function __destruct()
@@ -32,10 +30,10 @@ class Career extends Base
 
 	public function setDateRange()
 	{
-		$sql = "SELECT m.GameID, m.TeamID, m.TimeOn, m.TimeOff, m.Ejected, DATE_FORMAT(g.MatchTime,'%c/%e/%y') AS MatchTime "
+		$sql = "SELECT m.GameID, m.TeamID, m.TimeOn, m.TimeOff, m.Ejected, DATE_FORMAT(g.MatchTime,'%c/%e/%y') AS MatchTime, g.Duration "
 		."FROM tbl_gameminutes m "
 		."LEFT OUTER JOIN tbl_games g ON m.GameID = g.ID "
-		."WHERE PlayerID = " . $this->playerID . " "
+		."WHERE PlayerID = " . $this->playerID . " AND m.TeamID = 11 "
 		."ORDER BY g.MatchTime ASC";
 		
 		$rs = mysqli_query($this->connection, $sql) or die(mysqli_error($this->connection));

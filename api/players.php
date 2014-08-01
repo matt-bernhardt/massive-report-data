@@ -1,42 +1,49 @@
 <?php
-	include "../includes/block_conn_open.php";
 
-	if(isset($_GET['term'])) {
-		$term = '%' . $_GET['term'] . '%';
-	} else {
-		$term = '%';
+include_once("base.php");
+
+class Roster extends Base
+{
+
+	public $playerTerm;
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->setPlayer();
+		$this->setDateRange();
 	}
 
-	$sql = "SELECT ID AS value, CONCAT(FirstName,' ',LastName) AS label, Position, Citizenship, DOB "
-	."FROM tbl_players "
-	."WHERE LastName LIKE '" . $term ."' "
-	."ORDER BY LastName ASC, FirstName ASC";
-
-	$teammates = mysqli_query($connection, $sql) or die(mysqli_error($connection));
-
-	$rs = array();
-
-	while($row = mysqli_fetch_assoc($teammates)) {
-		$rs[] = $row;
+	public function __destruct()
+	{
+		parent::__destruct();
 	}
 
-	$data = json_encode($rs);
-
-	if(array_key_exists('callback',$_GET)) {
-
-		header('Content-Type: text/javascript; charset=utf8');
-	    header('Access-Control-Allow-Origin: http://www.example.com/');
-	    header('Access-Control-Max-Age: 3628800');
-	    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
-
-	    $callback = $_GET['callback'];
-	    echo $callback.'('.$data.');';		
-
-	} else {
-		header('Content-Type: application/json; charset=utf8');
-
-		echo $data;
+	public function setPlayer() 
+	{
+		if(isset($_GET['term'])) {
+			$this->playerTerm = '%' . $_GET['term'] . '%';
+		} else {
+			$this->playerTerm = '%';
+		}
 	}
 
-	include "../includes/block_conn_close.php";
+	public function setDateRange()
+	{
+		$sql = "SELECT ID AS value, CONCAT(FirstName,' ',LastName) AS label, Position, Citizenship, DOB "
+			."FROM tbl_players "
+			."WHERE LastName LIKE '" . $this->playerTerm ."' "
+			."ORDER BY LastName ASC, FirstName ASC";
+		
+		$rs = mysqli_query($this->connection, $sql) or die(mysqli_error($this->connection));
+
+		while($row = mysqli_fetch_assoc($rs)) {
+			$this->recordset[] = $row;
+		}
+	}
+
+}
+
+$obj = new Roster;
+
 ?>
