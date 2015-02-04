@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <title>Seadragon Embed</title>
+    <style type="text/css">
+        body {
+            margin: 0px;
+            font-family: Verdana;
+            line-height: 1.25em;
+        }
+        #content {
+            width: 800px;
+            margin-left: 10px;
+        }
+        h1 {
+            font-size: large;
+            font-weight: normal;
+            display: inline-block;
+            background-color: #f0f0f0;
+        }
+        h1 strong {
+            font-weight: bold;
+        }
+        h2 {
+            font-size: small;
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+        }
+        p {
+            font-size: small;
+            background-color: #faf8b6;
+            border: 1px solid #f5f270;
+            padding: 10px;
+        }
+        p a {
+            color: #444304;
+            background-color: #F5F270;
+            font-weight: bold;
+        }
+        ul {
+            font-size: small;
+        }
+        ul a {
+            color: #253649;
+            background-color: #F0F0F0;
+        }
+    </style>
+</head>
+
+<body>
+<div id="content">
+    
+    <h1><strong>Seadragon</strong> Embed</h1>
+    
+    <!-- Seadragon combo embed (uses Silverlight if present, otherwise falls back to Ajax) -->
+    <!-- The first two arguments to Seadragon.embed() are the desired width and height for the viewer, in CSS units. -->
+    <script type="text/javascript" src="http://seadragon.com/combo/embed.js"></script>
+    <script type="text/javascript">Seadragon.embed("auto", "600px", "GeneratedImages/dzc_output.xml");</script>
+    
+    <p>
+        To share your composition through this Seadragon viewer, simply upload this page alongside your generated images.
+        To learn more about Seadragon, visit <a href="http://seadragon.com/" target="_blank">Seadragon.com</a>.
+    </p>
+    
+    <h2>Going Further</h2>
+    
+    <ul>
+        <li><a href="http://go.microsoft.com/fwlink/?LinkID=110912">Team Blog</a></li>
+        <li><a href="http://go.microsoft.com/fwlink/?LinkId=117924">Ask a Question</a></li>
+        <li><a href="http://go.microsoft.com/fwlink/?LinkId=124225">Known Issues</a></li>
+    </ul>
+    
+</div>
+</body>
+
+</html>

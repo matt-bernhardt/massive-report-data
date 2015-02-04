@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <title>Seadragon Ajax</title>
+    <style type="text/css">
+        body {
+            margin: 0px;
+            font-family: Verdana;
+            line-height: 1.25em;
+        }
+        #content {
+            width: 800px;
+            margin-left: 10px;
+        }
+        h1 {
+            font-size: large;
+            font-weight: normal;
+            display: inline-block;
+            background-color: #f0f0f0;
+        }
+        h1 strong {
+            font-weight: bold;
+        }
+        h2 {
+            font-size: small;
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+        }
+        p {
+            font-size: small;
+            background-color: #faf8b6;
+            border: 1px solid #f5f270;
+            padding: 10px;
+        }
+        p a {
+            color: #444304;
+            background-color: #F5F270;
+            font-weight: bold;
+        }
+        ul {
+            font-size: small;
+        }
+        ul a {
+            color: #253649;
+            background-color: #F0F0F0;
+        }
+        #container {
+            width: auto;
+            height: 600px;
+            background-color: black;
+            border: 1px solid black;
+            color: white;   /* for error messages */
+        }
+    </style>
+    
+    <script type="text/javascript" src="http://seadragon.com/ajax/0.8/seadragon-min.js"></script>
+    <script type="text/javascript">
+        var viewer;
+
+        function init() {
+            viewer = new Seadragon.Viewer("container");
+            viewer.openDzi("GeneratedImages/dzc_output.xml");
+        }
+        
+        // Seadragon Ajax tutorials:
+        // http://seadragon.com/ajax/
+        
+        // Seadragon Ajax API reference:
+        // http://seadragon.com/ajax/0.8/doc/
+        
+        // Seadragon Ajax community support:
+        // http://getsatisfaction.com/livelabs/products/livelabs_seadragon_ajax/
+
+        Seadragon.Utils.addEvent(window, "load", init);
+    </script>
+</head>
+
+<body>
+<div id="content">
+    
+    <h1><strong>Seadragon</strong> Ajax</h1>
+    
+    <!-- Seadragon Ajax container -->
+    <div id="container">
+    </div>
+    
+    <p>
+        This page uses the Seadragon Ajax library to show your composition.
+        You can modify the source of this page to customize and extend the experience.
+        To learn more, visit the <a href="http://seadragon.com/ajax/" target="_blank">
+        Seadragon Ajax homepage</a>.
+    </p>
+    
+    <h2>Going Further</h2>
+    
+    <ul>
+        <li><a href="http://go.microsoft.com/fwlink/?LinkID=110912">Team Blog</a></li>
+        <li><a href="http://go.microsoft.com/fwlink/?LinkId=117924">Ask a Question</a></li>
+        <li><a href="http://go.microsoft.com/fwlink/?LinkId=124225">Known Issues</a></li>
+    </ul>
+    
+</div>
+</body>
+
+</html>
