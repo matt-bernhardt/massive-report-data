@@ -1,0 +1,155 @@
+body {
+	background-color: #f2f2f2;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+}
+h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+h2 {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+p {
+	margin-bottom: 1rem;
+	line-height: 1.25rem;
+}
+strong {
+	font-weight: bold;
+}
+hr {
+	border: none;
+	border-bottom: 1px solid #d1d1d1;
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+}
+/* Basic styles */
+ul.inline {
+}
+ul.inline li {
+	display: inline-block;	
+}
+
+/* Page regions */
+header {
+	font-size: 2rem;
+	font-weight: bold;
+	color: #000;
+	background: url('../img/masthead_voronoi.png') center center;
+	height: 7rem;
+}
+header div {
+	padding: 0.5rem;
+}
+nav#main-nav {
+	padding: 0;
+	margin-bottom: 1rem;
+}
+nav ul {
+	display: table-row;
+}
+nav ul li {
+	display: table-cell;
+}
+nav ul li a {
+	text-decoration: none;
+	padding: 0.5rem;
+	display: block;
+}
+nav#main-nav {
+	background: #8a9a22;
+}
+nav#main-nav ul li a {
+	color: #000;
+}
+nav#main-nav ul li a:hover,
+nav#main-nav ul li a:focus {
+	background: #c1cc7a;
+}
+
+nav#sub-nav {
+	margin-bottom: 1rem;
+}
+nav#sub-nav ul li {
+	padding-right: 1rem;
+}
+nav#sub-nav ul li a {
+	color: #000;
+	background: #8a9a22;
+}
+nav#sub-nav ul li a:hover,
+nav#sub-nav ul li a:focus {
+	background: #c1cc7a;
+}
+footer {
+	clear: both;
+	margin-top: 1rem;
+	border-top: 1px solid #d1d1d1;
+	padding-top: 1rem;
+	color: #959595;
+}
+footer ul.colophon {
+	float: right;
+	margin-top: 1.5rem;
+}
+footer ul.colophon li {
+	margin-left: 3rem;
+	vertical-align: middle;
+}
+
+.main {
+	border: 1px solid #d1d1d1;
+	width: 960px;
+	background-color: #fff;
+	padding: 1rem;
+	margin: 1rem auto;
+}
+section.players {
+
+}
+
+section.players aside {
+	float: left;
+	width: 18%;
+	margin-right: 2%;
+}
+section.players aside h2 {
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+}
+aside div.checkboxes label {
+	display: block;
+}
+
+section.players table {
+	float: left;
+}
+
+table.data {
+	width: 80%;
+}
+table.list thead th {
+	font-size: 1rem;
+	font-weight: bold;
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+}
+table.list thead th a {
+	text-decoration: none;
+	color: #000;
+	display: block;
+	padding: 0.25rem;
+}
+table.list thead th a:hover,
+table.list thead th a:focus {
+	background-color: #c1cc7a;
+}
+table.list td {
+	font-size: .75rem;
+	padding: 0.25rem 0;
+}
+table.list td {
+	padding-right: 0.5rem;
+}

@@ -1,0 +1,73 @@
+<section class="players">
+	<h1>All Time Columbus Crew Games</h1>
+	<p>The table below lists every game* that the Columbus Crew have played since their inaugural season in 1996. It includes official competitions - the regular season, the Lamar Hunt US Open Cup, and international competitions organized by CONCACAF. Exhibitions and mid-season friendlies, regardless of the opponent, have been excluded.</p>
+	<p>You can use the filters along the left side to narrow in on games of interest.</p>
+	<p>This display is a work in progress - so if you have feedback, please let Matt know using the links in the footer. I have ideas for how to expand this display farther, so please check back to see how things develop.</p>
+	<p>* - While I try to stay current with each game that the team plays, there are times when I fall behind. I appreciate your patience in these situations.</p>
+	<aside>
+		<h2>Home / Away</h2>
+		<div class="checkboxes">
+			<div ng-repeat="home in HomeAway">
+				<label>
+					<input type="checkbox" ng-model="search.HomeAway[home]">{{home}} 
+				</label>
+			</div>
+		</div>
+		<hr>
+		<h2>Season</h2>
+		<div class="checkboxes">
+			<div ng-repeat="season in Seasons">
+				<label>
+					<input type="checkbox" ng-model="search.Seasons[season]">{{season}} 
+				</label>
+			</div>
+		</div>
+		<hr>
+		<h2>Competition</h2>
+		<div class="checkboxes">
+			<div ng-repeat="competition in Competitions">
+				<label>
+					<input type="checkbox" ng-model="search.Competitions[competition]">{{competition}} 
+				</label>
+			</div>
+		</div>
+		<hr>
+		<h2>Opponent</h2>
+		<div class="checkboxes">
+			<div ng-repeat="opponent in Opponents">
+				<label>
+					<input type="checkbox" ng-model="search.Opponents[opponent]">{{opponent}} 
+				</label>
+			</div>
+		</div>
+	</aside>
+	<table class="list data players">
+		<thead>
+			<tr>
+				<th><a href="" ng-click="predicate = 'SortDate'; reverse=!reverse">Date</a></th>
+				<th><a href="" ng-click="predicate = 'SortHour'; reverse=!reverse">Time</a></th>
+				<th><a href="" ng-click="predicate = 'matchtype'; reverse=!reverse">Competition</a></th>
+				<th><a href="" ng-click="predicate = 'HomeTeam'; reverse=!reverse">Home</a></th>
+				<th><a href="" ng-click="predicate = 'HScore'; reverse=!reverse">Score</a></th>
+				<th><a href="" ng-click="predicate = 'AwayTeam'; reverse=!reverse">Away</a></th>
+				<th><a href="" ng-click="predicate = 'AScore'; reverse=!reverse">Score</a></th>
+				<th><a href="" ng-click="predicate = 'VenueName'; reverse=!reverse">Stadium</a></th>
+				<th><a href="" ng-click="predicate = 'Attendance'; reverse=!reverse">Attendance</a></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="game in games | gameFilter: search | orderBy:predicate:reverse">
+				<td>{{game.MatchDate}}</td>
+				<td nowrap="nowrap">{{game.MatchHour}}</td>
+				<td>{{game.matchtype}}</td>
+				<td>{{game.HomeTeam}}</td>
+				<td>{{game.HScore}}</td>
+				<td>{{game.AwayTeam}}</td>
+				<td>{{game.AScore}}</td>
+				<td>{{game.VenueName}}</td>
+				<td>{{game.Attendance}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</section>

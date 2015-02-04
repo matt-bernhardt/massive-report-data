@@ -1,0 +1,73 @@
+<section class="players">
+	<h1>2014 Expansion Draft Player Pool</h1>
+	<p>The table below displays those players in the 2014 Expansion Draft player pool who played at least one minute in an official competition during the 2014 season. You can use the filters along the left side to narrow in on players of interest.</p>
+	<aside>
+		<h2><label for="playerName">Name</label></h2>
+		<input id="playerName" type="text" placeholder="Player name..." name="playerName" ng-model="search.PlayerName">
+		<hr>
+		<h2>Position</h2>
+		<div class="checkboxes">
+			<div ng-repeat="thing in Positions">
+				<label>
+					<input type="checkbox" ng-model="search.Position[thing]">{{thing}} 
+				</label>
+			</div>
+		</div>
+		<hr>
+		<h2>Teams</h2>
+		<div class="checkboxes">
+			<div ng-repeat="thing in Teams">
+				<label>
+					<input type="checkbox" ng-model="search.Teams[thing]">{{thing}} 
+				</label>
+			</div>
+		</div>
+		<hr>
+		<h2>Citizenship</h2>
+		<div class="checkboxes">
+			<div ng-repeat="thing in Citizenships">
+				<label>
+					<input type="checkbox" ng-model="search.Citizenship[thing]">{{thing}} 
+				</label>
+			</div>
+		</div>
+		<hr>
+		<h2>Birth Year</h2>
+		<div class="checkboxes">
+			<div ng-repeat="thing in BirthYear">
+				<label>
+					<input type="checkbox" ng-model="search.BirthYear[thing]">{{thing}} 
+				</label>
+			</div>
+		</div>
+	</aside>
+	<div>
+		<table class="list data players">
+			<thead>
+				<tr>
+					<th class="name"><a href="" ng-click="predicate = 'LastName'; reverse=!reverse">Name</a></th>
+					<th class="position"><a href="" ng-click="predicate = 'Position'; reverse=!reverse">Position</a></th>
+					<th class="gp"><a href="" ng-click="predicate = 'GP'; reverse=!reverse">Played</a></th>
+					<th class="minutes"><a href="" ng-click="predicate = 'Minutes'; reverse=!reverse">Minutes</a></th>
+					<th class="birthdate"><a href="" ng-click="predicate = 'DOB'; reverse=!reverse">Birthdate</a></th>
+					<th class="citizenship"><a href="" ng-click="predicate = 'Citizenship'; reverse=!reverse">Citizenship</a></th>
+					<th class="height"><a href="" ng-click="predicate = 'Height_Total'; reverse=!reverse">Height</a></th>
+					<th class="weight"><a href="" ng-click="predicate = 'Weight'; reverse=!reverse">Weight</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="player in players | playerFilter: search | orderBy:predicate:reverse">
+					<td><strong>{{player.PlayerName}}</strong></td>
+					<td>{{player.Position}}</td>
+					<td>{{player.GP | number}}</td>
+					<td>{{player.Minutes | number}}</td>
+					<td>{{player.DOB | date : 'MMM d, yyyy'}}</td>
+					<td>{{player.Citizenship}}</td>
+					<td>{{player.Height_Feet + '\' ' + player.Height_Inches + '"'}}</td>
+					<td>{{player.Weight}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</section>

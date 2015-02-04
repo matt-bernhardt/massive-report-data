@@ -1,0 +1,86 @@
+<section class="players">
+	<h1>All Time Columbus Crew Players</h1>
+	<p>The table below contains every player* who has appeared in an official competition for the Columbus Crew, along with a handful of additional players who made a game day roster but never get closer than the bench. You can use the filters along the left side to narrow in on players of interest.</p>
+	<p>This display is a work in progress - so if you have feedback, please let Matt know using the links in the footer. I have ideas for how to expand this display farther, so please check back to see how things develop.</p>
+	<p>* - I'm usually a few games behind the present day, so if a player has made his debut in the last month, he may not appear here yet.</p>
+	<aside>
+		<h2><label for="playerName">Name</label></h2>
+		<input id="playerName" type="text" placeholder="Player name..." name="playerName" ng-model="search.PlayerName">
+		<hr>
+		<h2>Position</h2>
+		<div class="checkboxes">
+			<div ng-repeat="thing in Positions">
+				<label>
+					<input type="checkbox" ng-model="search.Position[thing]">{{thing}} 
+				</label>
+			</div>
+		</div>
+		<hr>
+		<h2>Seasons</h2>
+		<div class="checkboxes">
+			<div ng-repeat="thing in Seasons">
+				<label>
+					<input type="checkbox" ng-model="search.Seasons[thing]">{{thing}} 
+				</label>
+			</div>
+		</div>
+		<hr>
+		<h2>Citizenship</h2>
+		<div class="checkboxes">
+			<div ng-repeat="thing in Citizenships">
+				<label>
+					<input type="checkbox" ng-model="search.Citizenship[thing]">{{thing}} 
+				</label>
+			</div>
+		</div>
+		<hr>
+		<h2>Birth Year</h2>
+		<div class="checkboxes">
+			<div ng-repeat="thing in BirthYear">
+				<label>
+					<input type="checkbox" ng-model="search.BirthYear[thing]">{{thing}} 
+				</label>
+			</div>
+		</div>
+	</aside>
+	<nav id="sub-nav">
+		<ul>
+			<li><a href="" ng-click="pane='table'">Table</a></li>
+			<li><a href="" ng-click="pane='size'">Size</a></li>
+		</ul>
+	</nav>
+	<div ng-show="pane=='table'">
+		<h2>Basic player data</h2>
+		<table class="list data players">
+			<thead>
+				<tr>
+					<th class="number"><a href="" ng-click="predicate = 'RosterNumber'; reverse=!reverse">#</a></th>
+					<th class="name"><a href="" ng-click="predicate = 'LastName'; reverse=!reverse">Name</a></th>
+					<th class="position"><a href="" ng-click="predicate = 'Position'; reverse=!reverse">Position</a></th>
+					<th class="birthdate"><a href="" ng-click="predicate = 'DOB'; reverse=!reverse">Birthdate</a></th>
+					<th class="citizenship"><a href="" ng-click="predicate = 'Citizenship'; reverse=!reverse">Citizenship</a></th>
+					<th class="height"><a href="" ng-click="predicate = 'Height_Total'; reverse=!reverse">Height</a></th>
+					<th class="weight"><a href="" ng-click="predicate = 'Weight'; reverse=!reverse">Weight</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="player in players | playerFilter: search | orderBy:predicate:reverse">
+					<td>{{player.RosterNumber}}</td>
+					<td><strong>{{player.PlayerName}}</strong></td>
+					<td>{{player.Position}}</td>
+					<td>{{player.DOB | date : 'MMM d, yyyy'}}</td>
+					<td>{{player.Citizenship}}</td>
+					<td>{{player.Height_Feet + '\' ' + player.Height_Inches + '"'}}</td>
+					<td>{{player.Weight}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div ng-show="pane=='size'">
+		<link rel="stylesheet" type="text/css" href="css/scatterplot.css">
+		<h2>Scatterplot of player sizes</h2>
+		<p><em>This display is still under construction. For now, <a href="/visualize/roster">check out this older version</a>.</em></p>
+		<div id="plot"></div>
+	</div>
+
+</section>

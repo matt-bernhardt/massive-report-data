@@ -1,0 +1,52 @@
+#plot {
+	float: left;
+	width: 80%;
+}
+#plot svg {
+}
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #d1d1d1;
+	shape-rendering: crispEdges;
+}
+.axis text {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	fill: #000;
+}
+.player text {
+	display: none;
+	fill: #d9d9d9;
+}
+.player:hover text {
+	display: inherit;
+	fill: #e3c803;
+	font-weight: bold;
+	font-size: 18px;
+	text-shadow: 2px 2px #000;
+}
+circle.Goalkeeper {
+	stroke: #F7E7D4;
+	fill: #F7E7D4;
+	stroke: #006d2c;
+	fill: #006d2c;
+}
+circle.Defender {
+	stroke: #E7CB96;
+	fill: #E7CB96;
+	stroke: #31a354;
+	fill: #31a354;	
+}
+circle.Midfielder {
+	stroke: #A69688;
+	fill: #A69688;
+	stroke: #74c476;
+	fill: #74c476;
+}
+circle.Forward {
+	stroke: #C69380;	
+	fill: #C69380;
+	stroke: #bae4b3;
+	fill: #bae4b3;
+}
