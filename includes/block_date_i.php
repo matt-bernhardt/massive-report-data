@@ -35,7 +35,7 @@ ini_set('display_startup_errors', TRUE);
 	$sql .= "  AND (DAY(MatchTime) = ".$intDay." AND MONTH(MatchTime) = ".$intMonth.") ";
 	$sql .= "ORDER BY MatchTime ASC";
 
-	$dates = mysql_query($sql, $connection) or die(mysql_error($connection));
+	$dates = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$longPageContent = '<h1>Today in Crew History: '.$strMonth.' '.$intDay.'</h1>';
 
@@ -55,7 +55,7 @@ ini_set('display_startup_errors', TRUE);
 	$longPageContent .= '<th scope="col">Competition</th>';
 	$longPageContent .= '</tr></thead><tbody>';
 
-	while($row = @mysql_fetch_array($dates,MYSQLI_ASSOC)) {
+	while($row = @mysqli_fetch_array($dates,MYSQLI_ASSOC)) {
 		$longPageContent .= '<tr>';
 		$longPageContent .= '<td><a href="/game/'.$row['GameID'].'">'.$row['MatchYear'].'</a></td>';
 		$longPageContent .= '<td>'.$row['HomeTeam'].'</td>';
@@ -76,12 +76,10 @@ ini_set('display_startup_errors', TRUE);
 	$sql .= 'LEFT OUTER JOIN tbl_teams ta on c.LastTeamID = ta.ID ';
 	$sql .= 'WHERE (LastTeamID = 11 OR TeamID = 11) AND (day(SigningDate) = '.$intDay.' and month(SigningDate) = '.$intMonth.') ';
 	$sql .= 'ORDER BY year(SigningDate)';
-	$transactions = mysql_query($sql, $connection) or die(mysql_error($connection));
+	$transactions = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+	$recordset = $transactions->fetch_array();
 	$longPageContent .= '<h2>Transactions</h2>';
-
-	if (mysql_num_rows($transactions) == 0) {
-		$longPageContent .= "<p>No transactions on this date.</p>";
-	} else {
+	if(gettype($recordset) == "array") {
 		$longPageContent .= '<table><thead><tr>';
 		$longPageContent .= '<th scope="col">Year</th>';
 		$longPageContent .= '<th scope="col">Player</th>';
@@ -89,7 +87,15 @@ ini_set('display_startup_errors', TRUE);
 		$longPageContent .= '<th scope="col">New Team</th>';
 		$longPageContent .= '<th scope="col">Notes</th>';
 		$longPageContent .= '</tr></thead><tbody>';
-		while($row = @mysql_fetch_array($transactions,MYSQLI_ASSOC)) {
+		// first row
+		$longPageContent .= '<tr>';
+		$longPageContent .= '<td>'.$recordset['SigningDate'].'</td>';
+		$longPageContent .= '<td><a href="/player/'.$recordset['PlayerID'].'">'.$recordset['PlayerName'].'</a></td>';
+		$longPageContent .= '<td>'.$recordset['OldTeam'].'</td>';
+		$longPageContent .= '<td>'.$recordset['NewTeam'].'</td>';
+		$longPageContent .= '<td>'.$recordset['Notes'].'</td>';
+		$longPageContent .= '</tr>';
+		while($row = @mysqli_fetch_array($transactions,MYSQLI_ASSOC)) {
 			$longPageContent .= '<tr>';
 			$longPageContent .= '<td>'.$row['SigningDate'].'</td>';
 			$longPageContent .= '<td><a href="/player/'.$row['PlayerID'].'">'.$row['PlayerName'].'</a></td>';
@@ -99,6 +105,8 @@ ini_set('display_startup_errors', TRUE);
 			$longPageContent .= '</tr>';
 		}
 		$longPageContent .= '</tbody></table>';
+	} else {
+		$longPageContent .= "<p>No transactions on this date.</p>";
 	}
 
 	// Birthdays
@@ -107,7 +115,7 @@ ini_set('display_startup_errors', TRUE);
 	$sql .= "WHERE (DAY(DOB) = ".$intDay." AND MONTH(DOB) = ".$intMonth.") ";
 	$sql .= "ORDER BY Year(DOB) DESC";
 
-	$players = mysql_query($sql, $connection) or die(mysql_error($connection));
+	$players = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$longPageContent .= '<h2>Players</h2>';
 
@@ -117,7 +125,7 @@ ini_set('display_startup_errors', TRUE);
 	$longPageContent .= '<th scope="col">Position</th>';
 	$longPageContent .= '</tr></thead><tbody>';
 
-	while($row = @mysql_fetch_array($players,MYSQLI_ASSOC)) {
+	while($row = @mysqli_fetch_array($players,MYSQLI_ASSOC)) {
 		$longPageContent .= '<tr>';
 		$longPageContent .= '<td>'.$row['BirthYear'].'</td>';
 		$longPageContent .= '<td><a href="/player/'.$row['ID'].'">'.$row['PlayerName'].'</a></td>';

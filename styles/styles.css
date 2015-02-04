@@ -24,7 +24,7 @@
  */
 body {
 	font-family: 'Open Sans', sans-serif;
-	background: url('/blog/wp-content/themes/steampunk/images/background.jpg') #1b1b1b repeat top;
+	background: url('/images/background.jpg') #1b1b1b repeat top;
 	color: #d9d9d9;
 	font-size: 13px;
 	font-weight: normal;
@@ -241,6 +241,17 @@ div#tabs ul.ui-tabs-nav li.ui-state-active a {
 }
 div#tabs div.ui-tabs-panel {
 	padding: 1em 0;
+}
+
+/* Date navigation */
+div.datenav {
+  padding-bottom: 1rem;
+}
+div.datenav a.next {
+  float: right;
+}
+div.datenav a.prev {
+  float: left;
 }
 
 /* Homepage styles */

@@ -22,6 +22,7 @@
 <div id="chart"></div>
 <script>
 	var w = $("#chart").width();
+	var h = $("#chart").height();
 
 	var margin = {
 		top: 20,
@@ -45,6 +46,17 @@
 		if(error) {
 			console.log(error);
 		}
+
+
+		// need to set height
+		vis
+			.data(json)
+			.attr("height",function() { return json.length*lineheight });
+
+		var maxGameLength = Math.max.apply(Math,json.map(function(json){ return json.Duration }));
+		timelineScale = d3.scale.linear()
+			.domain([0, maxGameLength ])
+			.range([margin.left+textwidth,w-margin.right]);
 
 		var g = vis.selectAll("g")
 			.data(json)
@@ -72,7 +84,7 @@
 			.attr("stroke","gray")
 			.attr("x1",function(d) {return timelineScale(0)})
 			.attr("y1",0)
-			.attr("x2",function(d) {return timelineScale(90)})
+			.attr("x2",function(d) {return timelineScale(d.Duration)})
 			.attr("y2",0);
 
 		var player = a.append("line")
@@ -99,7 +111,7 @@ g.game:focus {
 	opacity: 1.0;
 }
 </style>
-<p><img id="linechart" src="/images/line_charts/<?php echo $strLineChartImage; ?>" alt="Line Chart of games for <?php echo $strPlayerName; ?>" /></p>
+<!-- <p><img id="linechart" src="/images/line_charts/<?php echo $strLineChartImage; ?>" alt="Line Chart of games for <?php echo $strPlayerName; ?>" /></p> -->
 
 <?php
 	include_once("../includes/block_conn_close.php");

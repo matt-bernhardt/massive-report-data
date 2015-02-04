@@ -3,7 +3,7 @@
 
     include_once ("includes/block_conn_open.php");
 
-	$strPath = $_GET['q'];
+	$strPath = substr($_SERVER['REQUEST_URI'],1);
 
 	$arrPath = explode("/",$strPath);
 
@@ -68,7 +68,7 @@
 
 		case "date":
 			// This Day in History
-			include ("includes/block_date.php");
+			include ("includes/block_date_i.php");
 			break;
 
 		case "game":

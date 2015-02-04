@@ -4,7 +4,7 @@
 	var h = w * (3/4);
 
 	var margin = {
-		top: 30,
+		top: 50,
 		right: 20,
 		bottom: 40,
 		left: 40
@@ -54,6 +54,67 @@
 		.call(yAxis);
 
 	yAxisElem.selectAll("text").attr('x','-6');
+
+	// Legend container
+	var l = vis.append("g").attr("class","legend");
+
+	l.append("text")
+		.attr("dx",margin.left+50)
+		.attr("dy",margin.top/2+6)
+		.attr("fill","#d9d9d9")
+		.text("Legend");
+
+	l.append("circle")
+		.attr("cx",margin.left+150)
+		.attr("cy",margin.top/2)
+		.attr("r",15)
+		.attr("class","Goalkeeper");
+	l.append("text")
+		.attr("dx",20)
+		.attr("dy",0)
+		.attr("x",margin.left+150)
+		.attr("y",margin.top/2+5)
+		.attr("fill","#d9d9d9")
+		.text("Goalkeeper");
+
+	l.append("circle")
+		.attr("cx",margin.left+300)
+		.attr("cy",margin.top/2)
+		.attr("r",15)
+		.attr("class","Defender");
+	l.append("text")
+		.attr("dx",20)
+		.attr("dy",0)
+		.attr("x",margin.left+300)
+		.attr("y",margin.top/2+5)
+		.attr("fill","#d9d9d9")
+		.text("Defender");
+
+	l.append("circle")
+		.attr("cx",margin.left+450)
+		.attr("cy",margin.top/2)
+		.attr("r",15)
+		.attr("class","Midfielder");
+	l.append("text")
+		.attr("dx",20)
+		.attr("dy",0)
+		.attr("x",margin.left+450)
+		.attr("y",margin.top/2+5)
+		.attr("fill","#d9d9d9")
+		.text("Midfielder");
+
+	l.append("circle")
+		.attr("cx",margin.left+600)
+		.attr("cy",margin.top/2)
+		.attr("r",15)
+		.attr("class","Forward");
+	l.append("text")
+		.attr("dx",20)
+		.attr("dy",0)
+		.attr("x",margin.left+600)
+		.attr("y",margin.top/2+5)
+		.attr("fill","#d9d9d9")
+		.text("Forward");
 
 	// All player container
 	var ac = vis.append("g").attr("class","ac");
@@ -148,21 +209,31 @@
 	display: inherit;
 	fill: #e3c803;
 	font-weight: bold;
+	font-size: 18px;
+	text-shadow: 2px 2px #000;
 }
 	circle.Goalkeeper {
 		stroke: #F7E7D4;
 		fill: #F7E7D4;
+		stroke: #006d2c;
+		fill: #006d2c;
 	}
 	circle.Defender {
 		stroke: #E7CB96;
-		fill: #E7CB96;	
+		fill: #E7CB96;
+		stroke: #31a354;
+		fill: #31a354;	
 	}
 	circle.Midfielder {
 		stroke: #A69688;
 		fill: #A69688;
+		stroke: #74c476;
+		fill: #74c476;
 	}
 	circle.Forward {
 		stroke: #C69380;	
 		fill: #C69380;
+		stroke: #bae4b3;
+		fill: #bae4b3;
 	}
 </style>
