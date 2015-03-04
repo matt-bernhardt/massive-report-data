@@ -30,6 +30,11 @@
 
 			$strCategory = $arrPath[1];
 			switch ($strCategory) {
+				case "freeagents":
+					$strPageTitle .= " > Free Agents";
+					include ("includes/browse_freeagents.php");
+					break;
+
 				case "opponents":
 					$strPageTitle .= " > Opponents";
 					include ("includes/browse_opponents.php");
@@ -87,6 +92,7 @@
 				$intOpponentID = 12;
 			} else {
 				$intOpponentID = $arrPath[1];
+				$strQueryString = $_SERVER["QUERY_STRING"];
 			}
 			include ("includes/block_opponent.php");
 			break;

@@ -13,6 +13,11 @@
 		<p>This is a repository for data concerning the Columbus Crew - its history and its context. I analyze and visualize a wide variety of information in order to help fans of the team to understand its performance.</p>
 		<p>This site launched in late 2012; it is still being built, so I invite you to take a look around, and let me know if there is something I've overlooked or gotten wrong. My email address is at the bottom of every page.</p>
 		<div class="update">
+			<h2><a href="/browse/freeagents">Possible Free Agents</a></h2>
+			<p>March 3<br>
+			With rumors swirling of a possible breakthrough on free agency, here is a list of 60 players who would become eligible once their contract is up, and another 24 who would gain that status after the 2015 season.</p>
+		</div>
+		<div class="update">
 			<h2><a href="/visualize/roster">Charting Player Sizes By Team</a></h2>
 			<p>April 27<br>
 			Inspired by a series of charts on NHL player sizes that I saw recently, here is a quick visualization of player sizes - height and weight - by team, position, and playing time.</p>
