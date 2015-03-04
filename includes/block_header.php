@@ -21,6 +21,11 @@
     <script src="/javascript/jquery.isotope.min.js"></script>
 <?php
 	}
+  if(isset($boolDataTables) && $boolDataTables == TRUE) {
+?>
+    <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+<?php
+  }
 	if(isset($boolFlot) && $boolFlot == TRUE) {
 ?>
 	<script src="/javascript/jquery.flot.js"></script>
