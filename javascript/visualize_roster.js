@@ -10,6 +10,8 @@
 		left: 40
 	};
 
+	var year = 2015;
+
 	// weight on horizontal / w / x scale
 	var weightScale = d3.scale.linear()
 		.domain([130,240])
@@ -122,9 +124,9 @@
 	// Player container
 	var pc = vis.append("g").attr("class","pc");
 
-	function chartPlayers(thisTeam,thisContainer,thisColor,showLabels) {
+	function chartPlayers(thisYear,thisTeam,thisContainer,thisColor,showLabels) {
 
-		d3.json("/api/roster.php?term="+thisTeam, function(error,json) {
+		d3.json("/api/roster.php?year="+thisYear+"&term="+thisTeam, function(error,json) {
 			if(error) {
 				console.log(error);
 			}
@@ -173,13 +175,13 @@
 	};
 
 	// Graph all players for context
-	chartPlayers(0,ac,"#202020",false);
+	chartPlayers(year,0,ac,"#202020",false);
 
 	// This is the update code
 	$("#filter label").click(function(d) {
 		var reqTeam = $(this).prev("input").attr("data-id");
 		$("#filter label").removeClass("selected");
-		chartPlayers(reqTeam,pc,"#666",true);
+		chartPlayers(year,reqTeam,pc,"#666",true);
 		$(this).addClass("selected");
 		
 	});

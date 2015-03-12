@@ -15,7 +15,6 @@
 	$longPageContent .= '<section id="options"><h2>Teams</h2> <ul id="filter" class="inline">';
 	$longPageContent .= '<li><input type="checkbox" name="CLB" id="clb" data-id="11"><label for="clb">CLB</label></li>';
 	$longPageContent .= '<li><input type="checkbox" name="CHI" id="chi" data-id="13"><label for="chi">CHI</label></li>';
-	$longPageContent .= '<li><input type="checkbox" name="CHV" id="chv" data-id="341"><label for="chv">CHV</label></li>';
 	$longPageContent .= '<li><input type="checkbox" name="COL" id="col" data-id="14"><label for="col">COL</label></li>';
 	$longPageContent .= '<li><input type="checkbox" name="DAL" id="dal" data-id="16"><label for="dal">DAL</label></li>';
 	$longPageContent .= '<li><input type="checkbox" name="DC" id="dc" data-id="12"><label for="dc">DC</label></li>';
@@ -25,6 +24,8 @@
 	$longPageContent .= '<li><input type="checkbox" name="MON" id="mon" data-id="45"><label for="mon">MON</label></li>';
 	$longPageContent .= '<li><input type="checkbox" name="NE" id="ne" data-id="15"><label for="ne">NE</label></li>';
 	$longPageContent .= '<li><input type="checkbox" name="NY" id="ny" data-id="20"><label for="ny">NY</label></li>';
+	$longPageContent .= '<li><input type="checkbox" name="NYC" id="nyc" data-id="547"><label for="nyc">NYC</label></li>';
+	$longPageContent .= '<li><input type="checkbox" name="ORL" id="orl" data-id="506"><label for="orl">ORL</label></li>';
 	$longPageContent .= '<li><input type="checkbox" name="PHI" id="phi" data-id="479"><label for="phi">PHI</label></li>';
 	$longPageContent .= '<li><input type="checkbox" name="POR" id="por" data-id="42"><label for="por">POR</label></li>';
 	$longPageContent .= '<li><input type="checkbox" name="RSL" id="rsl" data-id="340"><label for="rsl">RSL</label></li>';
