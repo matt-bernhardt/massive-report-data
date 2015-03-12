@@ -244,13 +244,13 @@ div#tabs div.ui-tabs-panel {
 }
 
 /* Date navigation */
-div.datenav {
+div.stepnav {
   padding-bottom: 1rem;
 }
-div.datenav a.next {
+div.stepnav a.next {
   float: right;
 }
-div.datenav a.prev {
+div.stepnav a.prev {
   float: left;
 }
 

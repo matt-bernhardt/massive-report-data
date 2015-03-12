@@ -40,7 +40,7 @@ ini_set('display_startup_errors', TRUE);
 	$longPageContent = '<h1>Today in Crew History: '.$strMonth.' '.$intDay.'</h1>';
 
 	// Date navigation
-	$longPageContent .= '<div class="datenav">'
+	$longPageContent .= '<div class="stepnav">'
 	.'<a class="prev" href="/date/'.date('n/j',$prevDate).'">&lt; '.date('F j',$prevDate).'</a>'
 	.'<a class="next" href="/date/'.date('n/j',$nextDate).'">'.date('F j',$nextDate).' &gt;</a>'
 	.'</div>';
