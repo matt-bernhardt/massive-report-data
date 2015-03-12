@@ -1,10 +1,14 @@
 <?php
 
+	// everything is coming in via intopponentID - need to split from there
 	if($intOpponentID == ''){
 		// need to add an opponent browse
 		$intOpponentID = 12;
 	}
-	
+	if(strpos($intOpponentID,"?") != false) {
+		$intOpponentID = substr($intOpponentID,0,strpos($intOpponentID,"?"));
+	}
+
 	$boolHome = false;
 	$boolAway = false;
 	if(isset($_GET['home'])){
@@ -22,6 +26,7 @@
 		$intEndYear = $_GET['endyear'];
 	} else {
 		$intEndYear = date('Y');
+		$intEndYear = 2015;
 	}
 	
 	$strHomeSelected = '';
@@ -65,11 +70,12 @@
 	$sql .= "LEFT OUTER JOIN tbl_venues v ON g.VenueID = v.ID ";
 	$sql .= "WHERE ".$strWhereClause." AND MatchTime < now() AND g.MatchTypeID <> 3 AND year(MatchTime) >= ".$intStartYear." AND year(MatchTime) <= ".$intEndYear." ";
 	$sql .= "ORDER BY MatchTime ASC";
+	// echo $sql;
 	$rs = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 	$longPageContent .= '<section id="controls">';
 	$longPageContent .= '<p>Use the controls below to filter the games visible in this summary.</p>';
-	$longPageContent .= '<form action="#" id="filter-season">';
+	$longPageContent .= '<form action="" id="filter-season">';
 	$longPageContent .= '<fieldset>';
 	$longPageContent .= '<input type="submit" value="Refresh">';
 	$longPageContent .= '<label for="home">Home: <input id="home" type="checkbox" name="home" '.$strHomeSelected.'/></label>';
@@ -77,7 +83,7 @@
 	$longPageContent .= '<label for="startyear">Start Date:';
 	$longPageContent .= '<select id="startyear" name="startyear">';
 	$intDefault = 1996;
-	for($x=1996;$x<=2014;$x++){
+	for($x=1996;$x<=2015;$x++){
 		if($x==$intStartYear){
 			$strSelected = ' selected="selected"';
 		} else {
@@ -89,8 +95,8 @@
 	$longPageContent .= '</label>';
 	$longPageContent .= '<label for="endyear">End Date:';
 	$longPageContent .= '<select id="endyear" name="endyear">';
-	$intDefault = 2014;
-	for($x=1996;$x<=2014;$x++){
+	$intDefault = 2015;
+	for($x=1996;$x<=2015;$x++){
 		if($x==$intEndYear){
 			$strSelected = ' selected="selected"';
 		} else {
@@ -221,9 +227,5 @@
 	$longPageContent .= '<script src="/javascript/selectToUISlider.jQuery.js"></script>';
 	$longPageContent .= '<link rel="stylesheet" href="/styles/redmond/jquery-ui-1.7.1.custom.css" type="text/css" />';
 	$longPageContent .= '<link rel="Stylesheet" href="/styles/ui.slider.extras.css" type="text/css" />';
-	
-	
-	  
-	
 	
 	?>
