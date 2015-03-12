@@ -3,6 +3,10 @@ $(function () {
 	var i = 0;
 var datasets = {
 <?php
+	$intPoints = 0;
+	$intWin = 0;
+	$intTie = 0;
+	$intLoss = 0;
 	$intX = 1;
 	$intSeason = 0;
 	$intFirstSeason = 1;
@@ -126,7 +130,8 @@ var datasets = {
 	// populate hash array
 	var d = new Date();
 	var arrHash = [];
-	arrHash = getHashArray(d.getFullYear());
+	// arrHash = getHashArray(d.getFullYear());
+	arrHash = getHashArray(2014);
 
 	// set initial state based on arrHash
 	i = 0;

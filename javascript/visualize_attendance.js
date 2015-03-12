@@ -75,7 +75,8 @@ $(function () {
 	// populate hash array
 	var d = new Date();
 	var arrHash = [];
-	arrHash = getHashArray(d.getFullYear());
+	// arrHash = getHashArray(d.getFullYear());
+	arrHash = getHashArray(2014);
 
 	// insert checkboxes
 	i = 0;
