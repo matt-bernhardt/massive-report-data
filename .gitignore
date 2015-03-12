@@ -1,4 +1,5 @@
 api/base.php
+home/
 includes/block_conn_open.php
 test/
 .htaccess*
