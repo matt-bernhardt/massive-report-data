@@ -1,0 +1,40 @@
+<section class="players">
+  <h1>Competitions and Trophies</h1>
+  <p>This display visualizes the recent history of the principal soccer competitions in the United States and Canada. In includes the regular season and playoffs of Major League Soccer, as well as the national cup competitions of each country. The timeframe covered begins with the inception of Major League Soccer in 1996, although the Open Cup is much older, and the Canadian Championship began in 2008.</p>
+  <p><em>Please note</em> that the display currently excludes a handful of non-MLS teams that achieved honors during this time period. The Rochester Rhinos and Charleston Battery each reached the final of the US Open Cup during this period, as did the Montreal Impact win the Canadian championship in 2008, before they joined MLS. These achievements will be honored in a future release of this display.</p>
+  <p>You can filter the display to specific competitions, and to levels of achievement within those competitions, using the nav bar below. Hovering over any cell of the display will show more information about that team's performance in that year.</p>
+  <ul id="selection" class="sf-menu sf-navbar">
+    <li id="ctrl-trophies"><a onClick="renderTrophies();">Trophies</a>
+      <ul>
+        <li><a onClick="renderTrophies();">Trophies Only</a></li>
+        <li><a onClick="renderTrophiesHonors();">All Honors</a></li>
+      </ul>
+    </li>
+    <li id="ctrl-shield"><a onClick="renderShield();">Supporters Shield</a>
+      <ul>
+        <li><a onClick="renderShield();">Shield Winners</a></li>
+        <li><a onClick="renderShieldFinalists();">Conference Champions</a></li>
+      </ul>
+    </li>
+    <li id="ctrl-playoffs"><a onClick="renderPlayoffChampions();">MLS Cup</a>
+      <ul>
+        <li><a href="#" onClick="renderPlayoffChampions();">Champions</a></li>
+        <li><a href="#" onClick="renderPlayoffFinalists();">Finalists</a></li>
+        <li><a href="#" onClick="renderPlayoffSemifinals();">Semifinals</a></li>
+        <li><a href="#" onClick="renderPlayoffs();">Qualifiers</a></li>
+      </ul>
+    </li>
+    <li id="ctrl-opencup"><a href="#" onClick="renderOpenCup();">US Open Cup</a>
+      <ul>
+        <li><a href="#" onClick="renderOpenCup();">Champions</a></li>
+        <li><a href="#" onClick="renderOpenCupFinalists();">Finalists</a></li>
+      </ul>
+    </li>
+    <li id="ctrl-canada"><a href="#" onClick="renderCanada();">Canadian Championships</a></li>
+    <li id="ctrl-concacaf"><a href="#" onClick="renderCONCACAF();">CONCACAF</a></li>
+  </ul>
+  <p id="legend-container"><strong>Legend:</strong> <span id="legend">Foo</span</p>
+  <div id="chart"></div>
+  <div class="tooltip"></div>
+  <div id="export-container"></div>
+</section>

@@ -2,7 +2,8 @@ var myApp = angular.module('myApp', [
 	'ngRoute',
 	'playerControllers',
 	'gameControllers',
-	'expansionControllers'
+	'expansionControllers',
+	'competitionControllers'
 ]);
 
 myApp.config(['$routeProvider', function($routeProvider) {
@@ -26,6 +27,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
 	when('/expansion', {
 		templateUrl: 'partials/expansion.html',
 		controller: 'ExpansionController'
+	}).
+	when('/competitions', {
+		templateUrl: 'partials/competitions.html',
+		controller: 'CompetitionController'
 	}).
 	otherwise({
 		redirectTo: '/index'

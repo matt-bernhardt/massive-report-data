@@ -26,16 +26,19 @@ expansionControllers.controller('ExpansionController', ['$scope', '$http', funct
 		$scope.predicate = 'LastName';
         $scope.reverse = false;
 
-        plot();
 	});
 }]);
 
 myApp.filter('playerFilter', function() {
     return function( list, searchobj ) {
 
+        console.log("<hello>");
+
         if (list != undefined) {
             
             return list.filter( function( item ) {
+
+                console.log("<beautiful>");
 
                 // Check for filters set
                 var any_filter_set = false;

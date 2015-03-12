@@ -45,9 +45,15 @@ playerControllers.controller('DetailsController', ['$scope', '$http', '$routePar
 myApp.filter('playerFilter', function() {
     return function( list, searchobj ) {
 
+        console.log("Hello...");
+
         if (list != undefined) {
-            
+
+            console.log("there...");
+
             return list.filter( function( item ) {
+
+                console.log("beautiful...");
 
                 // Check for filters set
                 var any_filter_set = false;
@@ -66,6 +72,9 @@ myApp.filter('playerFilter', function() {
                 for ( Season in searchobj.Seasons) {
                     any_filter_set = any_filter_set || searchobj.Seasons[ Season ];
                 }
+
+                console.log("life...");
+
                 // If any_filter_set is still false, just pass everything through
                 if ( !any_filter_set ) { return !any_filter_set; }
 
@@ -125,6 +134,7 @@ myApp.filter('playerFilter', function() {
 });
 
 function plot() {
+    console.log('Plotting...');
     var w = $("header").width()*0.8;
     var h = w * (3/4);
 

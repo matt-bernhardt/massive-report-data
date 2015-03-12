@@ -9,6 +9,9 @@ gameControllers.controller('GameListController', ['$scope', '$http', function($s
     };
     $scope.pane = 'table';
 	$http.get('/api/games-crew.json').success(function(data) {
+
+        console.log("Get...");
+
 		$scope.games = data;
 
         $scope.HomeAway = [];
@@ -32,9 +35,15 @@ gameControllers.controller('GameListController', ['$scope', '$http', function($s
 myApp.filter('gameFilter', function() {
     return function( list, searchobj ) {
 
+        console.log("Hello!");
+
         if (list != undefined) {
             
+            console.log("there!");
+
             return list.filter( function( item ) {
+
+                console.log("beautiful!");
 
                 // Check for filters set
                 var any_filter_set = false;
@@ -50,6 +59,9 @@ myApp.filter('gameFilter', function() {
                 for ( Opponent in searchobj.Opponents) {
                     any_filter_set = any_filter_set || searchobj.Opponents[ Opponent ];
                 }
+
+                console.log("life!");
+
                 // If any_filter_set is still false, just pass everything through
                 if ( !any_filter_set ) { return !any_filter_set; }
 
