@@ -125,6 +125,16 @@
 
 			break;
 
+		case "static":
+			// Static pages
+
+			$strCategory = $arrPath[1];
+			switch ($strCategory) {
+				case "opener":
+				include ("includes/static_attendance-opener.php");
+				break;
+			}
+
 		case "visualize":
 			// Visualizations
 
