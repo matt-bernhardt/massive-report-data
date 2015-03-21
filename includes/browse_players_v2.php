@@ -1,6 +1,7 @@
 <?php
 	$strMenuGroup = "Players";
 
+	$boolDataTables = true;
 	$strJavascript = "browse_filter.js";
 
 	// Define needed js libraries
