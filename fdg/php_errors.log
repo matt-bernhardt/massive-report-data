@@ -1,12 +1,12 @@
-[21-Jul-2012 04:09:58 UTC] PHP Warning:  include_once(/includes/block_header.php) [<a href='/phpmanual/function.include-once.html'>function.include-once.html</a>]: failed to open stream: No such file or directory in C:\localhost\fdg\index.php on line 3
-[21-Jul-2012 04:09:58 UTC] PHP Warning:  include_once() [<a href='/phpmanual/function.include.html'>function.include.html</a>]: Failed opening '/includes/block_header.php' for inclusion (include_path='.;C:\php\pear') in C:\localhost\fdg\index.php on line 3
-[21-Jul-2012 04:09:58 UTC] PHP Notice:  Undefined variable: connection in C:\localhost\fdg\index.php on line 13
-[21-Jul-2012 04:09:58 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in C:\localhost\fdg\index.php on line 13
-[21-Jul-2012 04:11:27 UTC] PHP Warning:  include_once(./includes/block_header.php) [<a href='/phpmanual/function.include-once.html'>function.include-once.html</a>]: failed to open stream: No such file or directory in C:\localhost\fdg\index.php on line 3
-[21-Jul-2012 04:11:27 UTC] PHP Warning:  include_once() [<a href='/phpmanual/function.include.html'>function.include.html</a>]: Failed opening './includes/block_header.php' for inclusion (include_path='.;C:\php\pear') in C:\localhost\fdg\index.php on line 3
-[21-Jul-2012 04:11:27 UTC] PHP Notice:  Undefined variable: connection in C:\localhost\fdg\index.php on line 13
-[21-Jul-2012 04:11:27 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in C:\localhost\fdg\index.php on line 13
-[21-Jul-2012 04:11:32 UTC] PHP Warning:  include_once(/includes/block_conn_open.php) [<a href='/phpmanual/function.include-once.html'>function.include-once.html</a>]: failed to open stream: No such file or directory in C:\localhost\includes\block_header.php on line 2
-[21-Jul-2012 04:11:32 UTC] PHP Warning:  include_once() [<a href='/phpmanual/function.include.html'>function.include.html</a>]: Failed opening '/includes/block_conn_open.php' for inclusion (include_path='.;C:\php\pear') in C:\localhost\includes\block_header.php on line 2
-[21-Jul-2012 04:11:32 UTC] PHP Notice:  Undefined variable: connection in C:\localhost\fdg\index.php on line 13
-[21-Jul-2012 04:11:32 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in C:\localhost\fdg\index.php on line 13
+[21-Jul-2012 04:09:58 UTC] PHP Warning:  include_once(/includes/block_header.php) [<a href='/phpmanual/function.include-once.html'>function.include-once.html</a>]: failed to open stream: No such file or directory in C:\localhost\fdg\index.php on line 3
+[21-Jul-2012 04:09:58 UTC] PHP Warning:  include_once() [<a href='/phpmanual/function.include.html'>function.include.html</a>]: Failed opening '/includes/block_header.php' for inclusion (include_path='.;C:\php\pear') in C:\localhost\fdg\index.php on line 3
+[21-Jul-2012 04:09:58 UTC] PHP Notice:  Undefined variable: connection in C:\localhost\fdg\index.php on line 13
+[21-Jul-2012 04:09:58 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in C:\localhost\fdg\index.php on line 13
+[21-Jul-2012 04:11:27 UTC] PHP Warning:  include_once(./includes/block_header.php) [<a href='/phpmanual/function.include-once.html'>function.include-once.html</a>]: failed to open stream: No such file or directory in C:\localhost\fdg\index.php on line 3
+[21-Jul-2012 04:11:27 UTC] PHP Warning:  include_once() [<a href='/phpmanual/function.include.html'>function.include.html</a>]: Failed opening './includes/block_header.php' for inclusion (include_path='.;C:\php\pear') in C:\localhost\fdg\index.php on line 3
+[21-Jul-2012 04:11:27 UTC] PHP Notice:  Undefined variable: connection in C:\localhost\fdg\index.php on line 13
+[21-Jul-2012 04:11:27 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in C:\localhost\fdg\index.php on line 13
+[21-Jul-2012 04:11:32 UTC] PHP Warning:  include_once(/includes/block_conn_open.php) [<a href='/phpmanual/function.include-once.html'>function.include-once.html</a>]: failed to open stream: No such file or directory in C:\localhost\includes\block_header.php on line 2
+[21-Jul-2012 04:11:32 UTC] PHP Warning:  include_once() [<a href='/phpmanual/function.include.html'>function.include.html</a>]: Failed opening '/includes/block_conn_open.php' for inclusion (include_path='.;C:\php\pear') in C:\localhost\includes\block_header.php on line 2
+[21-Jul-2012 04:11:32 UTC] PHP Notice:  Undefined variable: connection in C:\localhost\fdg\index.php on line 13
+[21-Jul-2012 04:11:32 UTC] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in C:\localhost\fdg\index.php on line 13
