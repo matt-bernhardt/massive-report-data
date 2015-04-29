@@ -11,7 +11,7 @@ var datasets = {
 	$sql = "SELECT DISTINCT HTeamID, t.Team3Ltr ";
 	$sql .= "FROM tbl_games g ";
 	$sql .= "LEFT OUTER JOIN tbl_teams t ON g.HTeamID = t.ID ";
-	$sql .= "WHERE MatchTypeID = 21 AND YEAR(MatchTime) = 2014 ";
+	$sql .= "WHERE MatchTypeID = 21 AND YEAR(MatchTime) = 2015 ";
 	$sql .= "ORDER BY Team3Ltr ASC";
 	$teams = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 	while($row = @mysqli_fetch_array($teams, MYSQLI_ASSOC)) {
@@ -26,7 +26,7 @@ var datasets = {
 		$intTeamID = $row['HTeamID'];
 		$strTeamAbbv = $row['Team3Ltr'];
 		if($intTeamID == 11){
-			$strSeriesName = "2014";
+			$strSeriesName = "2015";
 		} else {
 			$strSeriesName = $strTeamAbbv;
 		}
@@ -39,7 +39,7 @@ var datasets = {
 		$sql .= "FROM tbl_games g ";
 		$sql .= "LEFT OUTER JOIN tbl_teams h ON g.HTeamID = h.ID ";
 		$sql .= "LEFT OUTER JOIN tbl_teams a ON g.ATeamID = a.ID ";
-		$sql .= "WHERE (HteamID = ".$intTeamID." OR ATeamID = ".$intTeamID.") AND MatchTypeID = 21 AND MatchTime < NOW() AND YEAR(matchtime) = 2014 ";
+		$sql .= "WHERE (HteamID = ".$intTeamID." OR ATeamID = ".$intTeamID.") AND MatchTypeID = 21 AND MatchTime < NOW() AND YEAR(matchtime) = 2015 ";
 		$sql .= "ORDER BY MatchTime ASC";
 		$games = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 		$intX = 1;
@@ -166,7 +166,7 @@ var datasets = {
 	var d = new Date();
 	var arrHash = [];
 	// arrHash = getHashArray(d.getFullYear());
-	arrHash = getHashArray(2014);
+	arrHash = getHashArray(2015);
 
 	// set initial state based on arrHash
 	i = 0;

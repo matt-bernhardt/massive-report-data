@@ -131,7 +131,7 @@ var datasets = {
 	var d = new Date();
 	var arrHash = [];
 	// arrHash = getHashArray(d.getFullYear());
-	arrHash = getHashArray(2014);
+	arrHash = getHashArray(2015);
 
 	// set initial state based on arrHash
 	i = 0;

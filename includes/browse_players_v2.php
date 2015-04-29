@@ -25,8 +25,8 @@
 	$longPageContent .= '<h2>Season</h2>';
 	$longPageContent .= '<ul class="filter option-set clearfix" data-filter-group="year">';
 	$longPageContent .= '<li><a href="#filter-year-any" data-filter-value="" class="selected">Show All</a></li>';
-	for ($i = 1996; $i <= 2014; $i++) {
-		if($i==2014){$strClass='';}else{$strClass="";}
+	for ($i = 1996; $i <= 2015; $i++) {
+		if($i==2015){$strClass='';}else{$strClass="";}
 		$longPageContent .= '<li><a href="#filter-year-'.$i.'" data-filter-value=".'.$i.'"'.$strClass.'>'.$i.'</a></li>';
 	}
 	$longPageContent .= '</ul>';

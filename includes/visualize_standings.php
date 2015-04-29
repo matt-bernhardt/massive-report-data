@@ -14,5 +14,5 @@
 	$longPageContent .= '<div class="standings" id="east" style="width:100%;height:300px;"></div>';
 	$longPageContent .= '<h2>Western Conference</h2>';
 	$longPageContent .= '<div class="standings" id="west" style="width:100%;height:300px;"></div>';
-	$longPageContent .= '<p>The above charts are current through games played on Sunday, April 9 2014.</p>';
+	$longPageContent .= '<p>The above charts are current through games played on Sunday, March 8, 2015.</p>';
 ?>
