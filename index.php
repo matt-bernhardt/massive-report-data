@@ -8,6 +8,25 @@
 		<p>As part of these primary areas of information, the site also holds data about team attendance, performance, the opponents that the Crew have faced, and the competitions in which it has competed. You will also find a variety of charts and plots that visualize the rich history of one of the charter members of Major League Soccer.</p>
 		<p>The site is maintained by Matt Bernhardt, a longtime observer of the team who has contributed to a number of platforms over the years. I record, analyze and visualize a wide variety of information to provide some perspective on the team's activities.</p>
 		<p>This is a work in progress. I invite you to look around, and let me know if there is something I've overlooked or gotten wrong. My email address is at the bottom of every page.</p>
+<?php
+	$sql = "SELECT guid, DATE_FORMAT(post_date,'%M %D, %Y') AS show_date, post_content, post_title ";
+	$sql .= "FROM wp_posts ";
+	$sql .= "WHERE post_type = 'post' AND post_status = 'publish' ";
+	$sql .= "ORDER BY post_date DESC ";
+	$sql .= "LIMIT 0,5;";
+	$updates = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+	while($row = @mysqli_fetch_array($updates,MYSQLI_ASSOC)) {
+?>
+		<div class="update">
+			<h2><a href="<?php echo $row['guid']; ?>"><?php echo $row['post_title']; ?></a></h2>
+			<p><?php echo $row['show_date']; ?><br>
+			<?php // echo $row['post_content']; ?>
+			</p>
+		</div>
+<?php
+	}
+?>
+<!-- 
 		<div class="update">
 			<h2><a href="/static/opener">Crew SC Home Opener Attendance and Temperature</a></h2>
 			<p>March 14<br>
@@ -33,6 +52,7 @@
 			<p>July 14<br>
 			I'm happy to release an exploration tool for player combinations. This project allows people to explore how the Crew's performance has changed as different combinations of players have changed.</p>
 		</div>
+-->
 		<p><em>Matthew Bernhardt</em><br />
 		Historian and Statistician<br />
 		Massive Report</p>
