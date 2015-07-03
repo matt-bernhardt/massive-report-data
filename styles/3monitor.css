@@ -73,7 +73,8 @@ nav a:nth-child(3) {
 	margin-top: 0;
 }
 nav a:nth-child(3),
-nav a:nth-child(8) {
+nav a:nth-child(6),
+nav a:nth-child(9) {
 	margin-right: 0;
 }
 nav a:hover,

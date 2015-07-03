@@ -92,11 +92,12 @@
           <a class="grid-2" href="/browse/players"<?php if($strMenuGroup=="Players"){print(" class=selected");}?>>Players</a>
           <a class="grid-2" href="/date"<?php if($strMenuGroup=="Dates"){print(" class=selected");}?>>Dates</a>
           <a class="grid-2" href="/browse/games"<?php if($strMenuGroup=="Games"){print(" class=selected");}?>>Games</a>
+          <a class="grid-2" href="/browse/roster"<?php if($strMenuGroup=="Roster"){print(" class=selected");}?>>Roster</a>
           <a class="grid-2" href="/visualize/attendance"<?php if($strMenuGroup=="Attendance"){print(" class=selected");}?>>Attendance</a>
-          <a href="/browse/roster"<?php if($strMenuGroup=="Roster"){print(" class=selected");}?>>Roster</a>
-          <a href="/season"<?php if($strMenuGroup=="Seasons"){print(" class=selected");}?>>Seasons</a>
-          <a href="/visualize/chase"<?php if($strMenuGroup=="Chase"){print(" class=selected");}?>>Chase</a>
-		  <a href="/visualize/standings"<?php if($strMenuGroup=="Standings"){print(" class=selected");}?>>Standings</a>
+          <a class="grid-2" href="/visualize/chase"<?php if($strMenuGroup=="Chase"){print(" class=selected");}?>>Chase</a>
+          <a class="grid-2" href="/season"<?php if($strMenuGroup=="Seasons"){print(" class=selected");}?>>Seasons</a>
+          <a class="grid-2" href="/browse/opponents"<?php if($strMenuGroup=="Opponents"){print(" class=selected");}?>>Opponents</a>
+          <a class="grid-2" href="/visualize/standings"<?php if($strMenuGroup=="Standings"){print(" class=selected");}?>>Standings</a>
         </nav>
       </header>
 	  <section id="content">
