@@ -290,6 +290,10 @@ p.builtwith {
 	clear: both;
 	margin-top: 1em;
 }
+p.teaser {
+  font-size: 1.35em;
+  line-height: 1.5em;
+}
 
   footer {
     margin-top: 0.5em;

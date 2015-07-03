@@ -4,14 +4,10 @@
 	include "includes/block_header.php";
 ?>
 		<h1>Welcome to Massive Report Data!</h1>
-		<div class="column">
-
-		</div>
-		<div class="">
-
-		</div>
-		<p>This is a repository for data concerning the Columbus Crew - its history and its context. I analyze and visualize a wide variety of information in order to help fans of the team to understand its performance.</p>
-		<p>This site launched in late 2012; it is still being built, so I invite you to take a look around, and let me know if there is something I've overlooked or gotten wrong. My email address is at the bottom of every page.</p>
+		<p class="teaser">This is a repository for information concerning Columbus Crew SC. Here you will find records of every official game the team has ever played, and every player who has appeared in those games.</p>
+		<p>As part of these primary areas of information, the site also holds data about team attendance, performance, the opponents that the Crew have faced, and the competitions in which it has competed. You will also find a variety of charts and plots that visualize the rich history of one of the charter members of Major League Soccer.</p>
+		<p>The site is maintained by Matt Bernhardt, a longtime observer of the team who has contributed to a number of platforms over the years. I record, analyze and visualize a wide variety of information to provide some perspective on the team's activities.</p>
+		<p>This is a work in progress. I invite you to look around, and let me know if there is something I've overlooked or gotten wrong. My email address is at the bottom of every page.</p>
 		<div class="update">
 			<h2><a href="/static/opener">Crew SC Home Opener Attendance and Temperature</a></h2>
 			<p>March 14<br>

@@ -8,6 +8,7 @@
 
 ?>
   <h1>Style Test</h1>
+  <p class="teaser">This is a teaser paragraph. It exists to briefly highlight a few key sentences about the page, and is displayed in a bigger font than the rest of the body copy. It should not be too long.</p>
 <p>This is a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet dapibus libero, et facilisis mi facilisis eget. In hac habitasse platea dictumst. In at tortor vel ligula iaculis ornare non ac nibh. <a href="#">This is an inline link.</a> Suspendisse adipiscing, magna nec varius fermentum, lorem ante sollicitudin nisl, ac ultrices metus erat eget mi. Vestibulum <strong>this text is bold</strong> eu elit iaculis nibh molestie accumsan nec viverra elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In bibendum faucibus nisi, vitae ultricies nisi ornare non.</p>
 <h2>This is a second-tier header</h2>
 <p><span>This is a paragraph.</span> Etiam ultricies ipsum id purus tincidunt dignissim vestibulum erat congue. Sed pharetra tincidunt tortor, ac dignissim justo ornare vestibulum. Cras pellentesque hendrerit mi sed mattis. Fusce ut lorem eu dui aliquet rhoncus. Vestibulum et sollicitudin urna. Ut ut cursus quam.</p>
