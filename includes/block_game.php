@@ -6,7 +6,7 @@
 	// Define needed js libraries
 
 
-	$sql = "SELECT date_format(MatchTime, '%c/%e/%Y') AS MatchTime, date_format(MatchTime, '%Y-%m-%d') AS MachineDate, h.TeamID AS HomeID, h.teamname AS HomeTeam, HScore AS HomeScore, a.TeamID AS AwayID, a.teamname AS AwayTeam, AScore AS AwayScore, Attendance, t.MatchType, g.VenueID, v.VenueName "
+	$sql = "SELECT date_format(MatchTime, '%c/%e/%Y') AS MatchTime, h.TeamID AS HomeID, h.teamname AS HomeTeam, HScore AS HomeScore, a.TeamID AS AwayID, a.teamname AS AwayTeam, AScore AS AwayScore, Attendance, t.MatchType, g.VenueID, v.VenueName "
 	."FROM tbl_games g "
 	."LEFT OUTER JOIN tbl_team_identities h ON g.HTeamID = h.TeamID "
 	."LEFT OUTER JOIN tbl_team_identities a ON g.ATeamID = a.TeamID "
@@ -20,7 +20,7 @@
 
 	// Games with opponents not listed in tbl_team_identities will need alternate/old SQL
 	if(mysqli_num_rows($game)==0){
-		$sql = "SELECT date_format(MatchTime, '%c/%e/%Y') AS MatchTime, date_format(MatchTime, '%Y-%m-%d') AS MachineDate, h.ID AS HomeID, h.teamname AS HomeTeam, HScore AS HomeScore, a.ID AS AwayID, a.teamname AS AwayTeam, AScore AS AwayScore, Attendance, t.MatchType, g.VenueID, v.VenueName "
+		$sql = "SELECT date_format(MatchTime, '%c/%e/%Y') AS MatchTime, h.ID AS HomeID, h.teamname AS HomeTeam, HScore AS HomeScore, a.ID AS AwayID, a.teamname AS AwayTeam, AScore AS AwayScore, Attendance, t.MatchType, g.VenueID, v.VenueName "
 			."FROM tbl_games g "
 			."LEFT OUTER JOIN tbl_teams h ON g.HTeamID = h.ID "
 			."LEFT OUTER JOIN tbl_teams a ON g.ATeamID = a.ID "
@@ -33,7 +33,6 @@
 
 	while($row = @mysqli_fetch_array($game,MYSQLI_ASSOC)) {
 		$datMatchDate = $row['MatchTime'];
-		$datMachineDate = $row['MachineDate'];
 		$intHomeID = $row['HomeID'];
 		$strHomeTeam = $row['HomeTeam'];
 		$intHomeScore = $row['HomeScore'];
@@ -46,54 +45,7 @@
 		$strVenueName = $row['VenueName'];
 	}
 
-	// Game navigation
-	// Next game
-	$sql = "SELECT g.ID, DATE_FORMAT(g.MatchTime,'%c/%e/%Y') AS MatchDate, t.MatchType, IF(g.HTeamID = 11,CONCAT(g.HScore,'-',g.AScore,' vs. ',a.TeamName),CONCAT(g.AScore,'-',g.HScore,' @ ',h.TeamName)) AS Opponent, g.HScore, g.AScore "
-		."FROM tbl_games g "
-		."INNER JOIN lkp_matchtypes t ON g.MatchTypeID = t.ID "
-		."INNER JOIN tbl_teams h ON g.HTeamID = h.ID "
-		."INNER JOIN tbl_teams a ON g.ATeamID = a.ID "
-		."WHERE (HTeamID = 11 OR ATeamID = 11) AND DATE_FORMAT(MatchTime,'%Y-%m-%d') > '".$datMachineDate."' AND t.Official = 1 "
-		."ORDER BY MatchTime ASC "
-		."LIMIT 1";
-	$next = mysqli_query($connection, $sql) or die(mysqli_error($connection));
-	$boolNext = false;
-	while($row = @mysqli_fetch_array($next,MYSQLI_ASSOC)) {
-		$boolNext = true;
-		$intNextGameID = $row['ID'];
-		$datNextGame = $row['MatchDate'];
-		$strNextOpponent = $row['Opponent'];
-	}
-	// Previous game
-	$sql = "SELECT g.ID, DATE_FORMAT(g.MatchTime,'%c/%e/%Y') AS MatchDate, t.MatchType, IF(g.HTeamID = 11,CONCAT(g.HScore,'-',g.AScore,' vs. ',a.TeamName),CONCAT(g.AScore,'-',g.HScore,' @ ',h.TeamName)) AS Opponent, g.HScore, g.AScore "
-		."FROM tbl_games g "
-		."INNER JOIN lkp_matchtypes t ON g.MatchTypeID = t.ID "
-		."INNER JOIN tbl_teams h ON g.HTeamID = h.ID "
-		."INNER JOIN tbl_teams a ON g.ATeamID = a.ID "
-		."WHERE (HTeamID = 11 OR ATeamID = 11) AND DATE_FORMAT(MatchTime,'%Y-%m-%d') < '".$datMachineDate."' AND t.Official = 1 "
-		."ORDER BY MatchTime DESC "
-		."LIMIT 1";
-	$next = mysqli_query($connection, $sql) or die(mysqli_error($connection));
-	$boolPrev = false;
-	while($row = @mysqli_fetch_array($next,MYSQLI_ASSOC)) {
-		$boolPrev = true;
-		$intPrevGameID = $row['ID'];
-		$datPrevGame = $row['MatchDate'];
-		$strPrevOpponent = $row['Opponent'];
-	}
-
-
-	$longPageContent = '<div class="stepnav">';
-	if($boolPrev) {
-		$longPageContent .= '<a class="prev" href="/game/'.$intPrevGameID.'">&lt; '.$strPrevOpponent.'<br>'.$datPrevGame.'</a>';
-	}
-	if($boolNext) {
-		$longPageContent .= '<a class="next" href="/game/'.$intNextGameID.'">'.$strNextOpponent.' &gt;<br>'.$datNextGame.'</a>';
-	}
-	$longPageContent .= '</div>';
-
-
-	$longPageContent .= '<div class="gamedetails" itemscope itemtype="http://schema.org/SportsEvent">';
+	$longPageContent = '<div class="gamedetails" itemscope itemtype="http://schema.org/SportsEvent">';
 	$longPageContent .= '<h1 itemprop="name"><span class="home"><span itemprop="performer">'.$strHomeTeam.'</span> ';
 	$longPageContent .= '<span class="score">'.$intHomeScore.'</span></span>';
 	$longPageContent .= ' - ';
