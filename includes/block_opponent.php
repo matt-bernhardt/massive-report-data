@@ -68,7 +68,7 @@
 	$sql .= "FROM tbl_games g ";
 	$sql .= "LEFT OUTER JOIN lkp_matchtypes m ON g.MatchTypeID = m.id ";
 	$sql .= "LEFT OUTER JOIN tbl_venues v ON g.VenueID = v.ID ";
-	$sql .= "WHERE ".$strWhereClause." AND MatchTime < now() AND g.MatchTypeID <> 3 AND year(MatchTime) >= ".$intStartYear." AND year(MatchTime) <= ".$intEndYear." ";
+	$sql .= "WHERE ".$strWhereClause." AND MatchTime < now() AND m.Official = 1 AND year(MatchTime) >= ".$intStartYear." AND year(MatchTime) <= ".$intEndYear." ";
 	$sql .= "ORDER BY MatchTime ASC";
 	// echo $sql;
 	$rs = mysqli_query($connection, $sql) or die(mysqli_error($connection));
