@@ -10,7 +10,7 @@
 		left: 40
 	};
 
-	var year = 2015;
+	var year = 2017;
 
 	// weight on horizontal / w / x scale
 	var weightScale = d3.scale.linear()

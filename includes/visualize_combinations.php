@@ -8,7 +8,7 @@
 		$intYear = filter_var($arrPath[2], FILTER_VALIDATE_INT);
 	} else {
 		$intYear = date("Y");
-		$intYear = 2014;
+		$intYear = 2017;
 		$strPath .= "/".$intYear;
 	}
 

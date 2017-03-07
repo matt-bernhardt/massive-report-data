@@ -26,7 +26,7 @@
 		$intEndYear = $_GET['endyear'];
 	} else {
 		$intEndYear = date('Y');
-		$intEndYear = 2015;
+		$intEndYear = 2017;
 	}
 	
 	$strHomeSelected = '';
@@ -68,7 +68,7 @@
 	$sql .= "FROM tbl_games g ";
 	$sql .= "LEFT OUTER JOIN lkp_matchtypes m ON g.MatchTypeID = m.id ";
 	$sql .= "LEFT OUTER JOIN tbl_venues v ON g.VenueID = v.ID ";
-	$sql .= "WHERE ".$strWhereClause." AND MatchTime < now() AND g.MatchTypeID <> 3 AND year(MatchTime) >= ".$intStartYear." AND year(MatchTime) <= ".$intEndYear." ";
+	$sql .= "WHERE ".$strWhereClause." AND MatchTime < now() AND m.Official = 1 AND year(MatchTime) >= ".$intStartYear." AND year(MatchTime) <= ".$intEndYear." ";
 	$sql .= "ORDER BY MatchTime ASC";
 	// echo $sql;
 	$rs = mysqli_query($connection, $sql) or die(mysqli_error($connection));
@@ -83,7 +83,7 @@
 	$longPageContent .= '<label for="startyear">Start Date:';
 	$longPageContent .= '<select id="startyear" name="startyear">';
 	$intDefault = 1996;
-	for($x=1996;$x<=2015;$x++){
+	for($x=1996;$x<=2017;$x++){
 		if($x==$intStartYear){
 			$strSelected = ' selected="selected"';
 		} else {
@@ -95,8 +95,8 @@
 	$longPageContent .= '</label>';
 	$longPageContent .= '<label for="endyear">End Date:';
 	$longPageContent .= '<select id="endyear" name="endyear">';
-	$intDefault = 2015;
-	for($x=1996;$x<=2015;$x++){
+	$intDefault = 2017;
+	for($x=1996;$x<=2017;$x++){
 		if($x==$intEndYear){
 			$strSelected = ' selected="selected"';
 		} else {

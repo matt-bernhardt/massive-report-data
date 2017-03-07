@@ -12,10 +12,11 @@ $(function () {
 <?php
 	$arrEast = array();
 	$arrWest = array();
+	$intSeasonLength = 28;
 	
 	$sql = "SELECT id, teamname, Conference ";
 	$sql .= "FROM tbl_teams ";
-	$sql .= "WHERE League = 'MLS' ";
+	$sql .= "WHERE League = 'USL-PRO' ";
 	$sql .= "ORDER BY teamname";
 	$rs = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 	$x = 0;
@@ -28,14 +29,14 @@ $(function () {
 			$arrEastJSON[$x]['color'] = '#444';
 			$sql = "SELECT SUM(IF(HTeamID = ".$intTeamID.",IF(HScore>AScore,1,0),IF(AScore>HScore,1,0))) AS Wins, SUM(IF(HScore=AScore,1,0)) AS Ties, SUM(IF(HTeamID = ".$intTeamID.",IF(HScore<Ascore,1,0),IF(AScore<HScore,1,0))) AS Losses ";
 			$sql .= "FROM tbl_games ";
-			$sql .= "WHERE YEAR(matchTime) = 2017 AND MatchTime < NOW() AND MatchTypeID = 21 AND (HTeamID = ".$intTeamID." OR ATeamID = ".$intTeamID.")";
+			$sql .= "WHERE YEAR(matchTime) = 2016 AND MatchTime < NOW() AND MatchTypeID = 27 AND (HTeamID = ".$intTeamID." OR ATeamID = ".$intTeamID.")";
 			$rs1 = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 			while($row1 = @mysqli_fetch_array($rs1, MYSQLI_ASSOC)){			
 				$intGP =  $row1['Wins']+$row1['Ties']+$row1['Losses'];
 				$intPoints = ($row1['Wins']*3)+$row1['Ties'];
-				$intMaxPoints = $intPoints + (3*(34-$intGP));
-				$arrEastJSON[$x]['data'][] = array($intPoints,10-$x,$strTeamName);
-				$arrEastJSON[$x]['data'][] = array($intMaxPoints,10-$x,$strTeamName);
+				$intMaxPoints = $intPoints + (3*($intSeasonLength-$intGP));
+				$arrEastJSON[$x]['data'][] = array($intPoints,12-$x,$strTeamName);
+				$arrEastJSON[$x]['data'][] = array($intMaxPoints,12-$x,$strTeamName);
 				$arrEastJSON[$x]['points'] = $intPoints;
 			}
 			$x++;
@@ -44,14 +45,14 @@ $(function () {
 			$arrWestJSON[$y]['color'] = '#444';
 			$sql = "SELECT SUM(IF(HTeamID = ".$intTeamID.",IF(HScore>AScore,1,0),IF(AScore>HScore,1,0))) AS Wins, SUM(IF(HScore=AScore,1,0)) AS Ties, SUM(IF(HTeamID = ".$intTeamID.",IF(HScore<Ascore,1,0),IF(AScore<HScore,1,0))) AS Losses ";
 			$sql .= "FROM tbl_games ";
-			$sql .= "WHERE YEAR(matchTime) = 2017 AND MatchTime < NOW() AND MatchTypeID = 21 AND (HTeamID = ".$intTeamID." OR ATeamID = ".$intTeamID.")";
+			$sql .= "WHERE YEAR(matchTime) = 2016 AND MatchTime < NOW() AND MatchTypeID = 27 AND (HTeamID = ".$intTeamID." OR ATeamID = ".$intTeamID.")";
 			$rs1 = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 			while($row1 = @mysqli_fetch_array($rs1, MYSQLI_ASSOC)){
 				$intGP =  $row1['Wins']+$row1['Ties']+$row1['Losses'];
 				$intPoints = ($row1['Wins']*3)+$row1['Ties'];
-				$intMaxPoints = $intPoints + (3*(34-$intGP));
-				$arrWestJSON[$y]['data'][] = array($intPoints,10-$y,$strTeamName);
-				$arrWestJSON[$y]['data'][] = array($intMaxPoints,10-$y,$strTeamName);
+				$intMaxPoints = $intPoints + (3*($intSeasonLength-$intGP));
+				$arrWestJSON[$y]['data'][] = array($intPoints,12-$y,$strTeamName);
+				$arrWestJSON[$y]['data'][] = array($intMaxPoints,12-$y,$strTeamName);
 				$arrWestJSON[$y]['points'] = $intPoints;
 			}
 			$y++;
@@ -64,28 +65,28 @@ $(function () {
 	for($x=0;$x<count($arrEastJSON);$x++){
 		if($arrEastJSON[$x]['label']=="Columbus Crew"){ 
 			$strColor = '#ffd407';
-		} elseif ($x<5) {
+		} elseif ($x<6) {
 			$strColor = '#111';
 		} else {
 			$strColor = '#444';
 		}
 		$arrEastJSON[$x]['color'] = $strColor;
-		$arrEastJSON[$x]['data'][0][1] = 10-$x;
-		$arrEastJSON[$x]['data'][1][1] = 10-$x;
+		$arrEastJSON[$x]['data'][0][1] = 12-$x;
+		$arrEastJSON[$x]['data'][1][1] = 12-$x;
 		unset($arrEastJSON[$x]['points']);
 	}
 
 	for($x=0;$x<count($arrWestJSON);$x++){
 		if($arrWestJSON[$x]['label']=="Columbus Crew"){ 
 			$strColor = '#ffd407';
-		} elseif ($x<5) {
+		} elseif ($x<6) {
 			$strColor = '#111';
 		} else {
 			$strColor = '#444';
 		}
 		$arrWestJSON[$x]['color'] = $strColor;
-		$arrWestJSON[$x]['data'][0][1] = 10-$x;
-		$arrWestJSON[$x]['data'][1][1] = 10-$x;
+		$arrWestJSON[$x]['data'][0][1] = 12-$x;
+		$arrWestJSON[$x]['data'][1][1] = 12-$x;
 		unset($arrWestJSON[$x]['points']);
 	}
 
@@ -114,7 +115,7 @@ var west =
     	},
     	yaxis: {
     		min: 0,
-    		max: 11,
+    		max: 13,
     		color: "#b4b4b4"
     	},
 		legend: {
