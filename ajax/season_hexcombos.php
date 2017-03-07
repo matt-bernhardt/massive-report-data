@@ -65,7 +65,7 @@ d3.json("/fdg/<?php echo $reqData; ?>", function(error, data) {
 // Functions
 buildHexagons = function(data) {
     var colorRange = d3.scale.linear()
-        .domain([0,1620]) // games played together
+        .domain([0,2880]) // games played together
         .range([255,0]); // color being mapped
 
     hexagons = svgContainer.append("g")
