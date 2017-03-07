@@ -1,0 +1,902 @@
+[
+      {
+        "name":"Atlanta",
+        "year":"2016",
+        "lost":"joined"
+      },
+
+      {
+        "name":"Chicago",
+        "year":"1997",
+        "lost":"joined"
+      },
+      {
+        "name":"Chicago",
+        "year":"2004",
+        "lost":3,
+        "players":[
+          "Andy Williams",
+          "Orlando Perez",
+          "D.J. Countess"
+        ]
+      },
+      {
+        "name":"Chicago",
+        "year":2006,
+        "lost":1,
+        "players":["Nate Jaqua"]
+      },
+      {
+        "name":"Chicago",
+        "year":2007,
+        "lost":1,
+        "players":["Ivan Guerrero"]
+      },
+      {
+        "name":"Chicago",
+        "year":2008,
+        "lost":1,
+        "players":["Stephen King"]
+      },
+      {
+        "name":"Chicago",
+        "year":2009,
+        "lost":1,
+        "players":["David Myrie"]
+      },
+      {
+        "name":"Chicago",
+        "year":2010,
+        "lost":2,
+        "players":[
+          "Peter Lowry",
+          "John Thorrington"
+        ]
+      },
+      {
+        "name":"Chicago",
+        "year":2011,
+        "lost":0
+      },
+      {
+        "name":"Chicago",
+        "year":2014,
+        "lost":0
+      },
+      {
+        "name":"Chicago",
+        "year":2016,
+        "lost":0
+      },
+
+      {
+        "name":"Chivas USA",
+        "year":2004,
+        "lost":"joined"
+      },
+      {
+        "name":"Chivas USA",
+        "year":2006,
+        "lost":1,
+        "players":["Tim Regan"]
+      },
+      {
+        "name":"Chivas USA",
+        "year":2007,
+        "lost":1,
+        "players":["Jason Hernandez"]
+      },
+      {
+        "name":"Chivas USA",
+        "year":2008,
+        "lost":0
+      },
+      {
+        "name":"Chivas USA",
+        "year":2009,
+        "lost":1,
+        "players":["Shavar Thomas"]
+      },
+      {
+        "name":"Chivas USA",
+        "year":2010,
+        "lost":2,
+        "players":[
+          "Alan Gordon",
+          "Jonathan Bornstein"
+        ]
+      },
+      {
+        "name":"Chivas USA",
+        "year":2011,
+        "lost":1,
+        "players":["Zarek Valentin"]
+      },
+      {
+        "name":"Chivas USA",
+        "year":2014,
+        "lost":0
+      },
+
+      {
+        "name":"Colorado",
+        "year":1997,
+        "lost":3,
+        "players":[
+          "Brian Bates",
+          "Steve Patterson",
+          "Matt Kmosko"
+        ]
+      },
+      {
+        "name":"Colorado",
+        "year":2004,
+        "lost":2,
+        "players":[
+          "Antonio de la Torre",
+          "Jeff Stewart"
+        ]
+      },
+      {
+        "name":"Colorado",
+        "year":2006,
+        "lost":0
+      },
+      {
+        "name":"Colorado",
+        "year":2007,
+        "lost":0
+      },
+      {
+        "name":"Colorado",
+        "year":2008,
+        "lost":0
+      },
+      {
+        "name":"Colorado",
+        "year":2009,
+        "lost":1,
+        "players":["Jordan Harvey"]
+      },
+      {
+        "name":"Colorado",
+        "year":2010,
+        "lost":1,
+        "players":["Anthony Wallace"]
+      },
+      {
+        "name":"Colorado",
+        "year":2011,
+        "lost":1,
+        "players":["Sanna Nyassi"]
+      },
+      {
+        "name":"Colorado",
+        "year":2014,
+        "lost":2,
+        "players":[
+          "Tony Cascio",
+          "Danny Mwanga"
+        ]
+      },
+      {
+        "name":"Colorado",
+        "year":2016,
+        "lost":0
+      },
+
+      {
+        "name":"Columbus",
+        "year":1997,
+        "lost":3,
+        "players":[
+          "Jason Farrell",
+          "Jorge Salcedo",
+          "A.J. Wood"
+        ]
+      },
+      {
+        "name":"Columbus",
+        "year":2004,
+        "lost":2,
+        "players":[
+          "Nelson Akwari",
+          "Erick Scott"
+        ]
+      },
+      {
+        "name":"Columbus",
+        "year":2006,
+        "lost":1,
+        "players":["Ritchie Kotschau"]
+      },
+      {
+        "name":"Columbus",
+        "year":2007,
+        "lost":1,
+        "players":["Ned Grabavoy"]
+      },
+      {
+        "name":"Columbus",
+        "year":2008,
+        "lost":1,
+        "players":["Brad Evans"]
+      },
+      {
+        "name":"Columbus",
+        "year":2009,
+        "lost":1,
+        "players":["Alejandro Moreno"]
+      },
+      {
+        "name":"Columbus",
+        "year":2010,
+        "lost":2,
+        "players":[
+          "Adam Moffat",
+          "Eric Brunner"
+        ]
+      },
+      {
+        "name":"Columbus",
+        "year":2011,
+        "lost":1,
+        "players":["Josh Gardner"]
+      },
+      {
+        "name":"Columbus",
+        "year":2014,
+        "lost":2,
+        "players":[
+          "Jairo Arrieta",
+          "Eric Gehrig"
+        ]
+      },
+      {
+        "name":"Columbus",
+        "year":2016,
+        "lost":1,
+        "players":["Mohammed Saeid"]
+      },
+
+      {
+        "name":"Dalllas",
+        "year":1997,
+        "lost":3
+      },
+      {
+        "name":"Dalllas",
+        "year":2004,
+        "lost":1
+      },
+      {
+        "name":"Dalllas",
+        "year":2006,
+        "lost":0
+      },
+      {
+        "name":"Dalllas",
+        "year":2007,
+        "lost":1
+      },
+      {
+        "name":"Dalllas",
+        "year":2008,
+        "lost":0
+      },
+      {
+        "name":"Dalllas",
+        "year":2009,
+        "lost":0
+      },
+      {
+        "name":"Dalllas",
+        "year":2010,
+        "lost":2
+      },
+      {
+        "name":"Dalllas",
+        "year":2011,
+        "lost":0
+      },
+      {
+        "name":"Dalllas",
+        "year":2014,
+        "lost":1
+      },
+      {
+        "name":"Dalllas",
+        "year":2016,
+        "lost":1
+      },
+
+      {
+        "name":"DC",
+        "year":1997,
+        "lost":3
+      },
+      {
+        "name":"DC",
+        "year":2004,
+        "lost":3
+      },
+      {
+        "name":"DC",
+        "year":2006,
+        "lost":1
+      },
+      {
+        "name":"DC",
+        "year":2007,
+        "lost":1
+      },
+      {
+        "name":"DC",
+        "year":2008,
+        "lost":0
+      },
+      {
+        "name":"DC",
+        "year":2009,
+        "lost":1
+      },
+      {
+        "name":"DC",
+        "year":2010,
+        "lost":1
+      },
+      {
+        "name":"DC",
+        "year":2011,
+        "lost":0
+      },
+      {
+        "name":"DC",
+        "year":2014,
+        "lost":2
+      },
+      {
+        "name":"DC",
+        "year":2016,
+        "lost":0
+      },
+
+      {
+        "name":"Houston",
+        "year":2006,
+        "lost":1
+      },
+      {
+        "name":"Houston",
+        "year":2007,
+        "lost":1
+      },
+      {
+        "name":"Houston",
+        "year":2008,
+        "lost":1
+      },
+      {
+        "name":"Houston",
+        "year":2009,
+        "lost":0
+      },
+      {
+        "name":"Houston",
+        "year":2010,
+        "lost":0
+      },
+      {
+        "name":"Houston",
+        "year":2011,
+        "lost":1
+      },
+      {
+        "name":"Houston",
+        "year":2014,
+        "lost":1
+      },
+      {
+        "name":"Houston",
+        "year":2016,
+        "lost":1
+      },
+
+      {
+        "name":"Kansas City",
+        "year":1997,
+        "lost":1
+      },
+      {
+        "name":"Kansas City",
+        "year":2004,
+        "lost":2
+      },
+      {
+        "name":"Kansas City",
+        "year":2006,
+        "lost":1
+      },
+      {
+        "name":"Kansas City",
+        "year":2007,
+        "lost":0
+      },
+      {
+        "name":"Kansas City",
+        "year":2008,
+        "lost":1
+      },
+      {
+        "name":"Kansas City",
+        "year":2009,
+        "lost":0
+      },
+      {
+        "name":"Kansas City",
+        "year":2010,
+        "lost":1
+      },
+      {
+        "name":"Kansas City",
+        "year":2011,
+        "lost":1
+      },
+      {
+        "name":"Kansas City",
+        "year":2014,
+        "lost":1
+      },
+      {
+        "name":"Kansas City",
+        "year":2016,
+        "lost":1
+      },
+
+      {
+        "name":"Los Angeles",
+        "year":1997,
+        "lost":3
+      },
+      {
+        "name":"Los Angeles",
+        "year":2004,
+        "lost":1
+      },
+      {
+        "name":"Los Angeles",
+        "year":2006,
+        "lost":1
+      },
+      {
+        "name":"Los Angeles",
+        "year":2007,
+        "lost":1
+      },
+      {
+        "name":"Los Angeles",
+        "year":2008,
+        "lost":1
+      },
+      {
+        "name":"Los Angeles",
+        "year":2009,
+        "lost":1
+      },
+      {
+        "name":"Los Angeles",
+        "year":2010,
+        "lost":0
+      },
+      {
+        "name":"Los Angeles",
+        "year":2011,
+        "lost":0
+      },
+      {
+        "name":"Los Angeles",
+        "year":2014,
+        "lost":0
+      },
+      {
+        "name":"Los Angeles",
+        "year":2016,
+        "lost":0
+      },
+
+      {
+        "name":"Miami",
+        "year":"1997",
+        "lost":"joined"
+      },
+
+      {
+        "name":"Minnesota",
+        "year":"2016",
+        "lost":"joined"
+      },
+
+      {
+        "name":"Montreal",
+        "year":"2011",
+        "lost":"joined"
+      },
+      {
+        "name":"Montreal",
+        "year":"2014",
+        "lost":1
+      },
+      {
+        "name":"Montreal",
+        "year":"2016",
+        "lost":1
+      },
+
+      {
+        "name":"New England",
+        "year":1997,
+        "lost":1
+      },
+      {
+        "name":"New England",
+        "year":2004,
+        "lost":2
+      },
+      {
+        "name":"New England",
+        "year":2006,
+        "lost":1
+      },
+      {
+        "name":"New England",
+        "year":2007,
+        "lost":1
+      },
+      {
+        "name":"New England",
+        "year":2008,
+        "lost":1
+      },
+      {
+        "name":"New England",
+        "year":2009,
+        "lost":1
+      },
+      {
+        "name":"New England",
+        "year":2010,
+        "lost":0
+      },
+      {
+        "name":"New England",
+        "year":2011,
+        "lost":0
+      },
+      {
+        "name":"New England",
+        "year":2014,
+        "lost":2
+      },
+      {
+        "name":"New England",
+        "year":2016,
+        "lost":1
+      },
+
+      {
+        "name":"New York",
+        "year":1997,
+        "lost":3
+      },
+      {
+        "name":"New York",
+        "year":2004,
+        "lost":2
+      },
+      {
+        "name":"New York",
+        "year":2006,
+        "lost":1
+      },
+      {
+        "name":"New York",
+        "year":2007,
+        "lost":1
+      },
+      {
+        "name":"New York",
+        "year":2008,
+        "lost":1
+      },
+      {
+        "name":"New York",
+        "year":2009,
+        "lost":1
+      },
+      {
+        "name":"New York",
+        "year":2010,
+        "lost":0
+      },
+      {
+        "name":"New York",
+        "year":2011,
+        "lost":0
+      },
+      {
+        "name":"New York",
+        "year":2014,
+        "lost":0
+      },
+      {
+        "name":"New York",
+        "year":2016,
+        "lost":1
+      },
+
+      {
+        "name":"New York City",
+        "year":2014,
+        "lost":"joined"
+      },
+      {
+        "name":"New York City",
+        "year":2016,
+        "lost":0
+      },
+
+      {
+        "name":"Orlando",
+        "year":2014,
+        "lost":"joined"
+      },
+      {
+        "name":"Orlando",
+        "year":2016,
+        "lost":1
+      },
+
+      {
+        "name":"Philadelphia",
+        "year":2009,
+        "lost":"joined"
+      },
+      {
+        "name":"Philadelphia",
+        "year":2010,
+        "lost":2
+      },
+      {
+        "name":"Philadelphia",
+        "year":2011,
+        "lost":1
+      },
+      {
+        "name":"Philadelphia",
+        "year":2014,
+        "lost":1
+      },
+      {
+        "name":"Philadelphia",
+        "year":2016,
+        "lost":0
+      },
+
+      {
+        "name":"Portland",
+        "year":2010,
+        "lost":"joined"
+      },
+      {
+        "name":"Portland",
+        "year":2011,
+        "lost":0
+      },
+      {
+        "name":"Portland",
+        "year":2014,
+        "lost":1
+      },
+      {
+        "name":"Portland",
+        "year":2016,
+        "lost":0
+      },
+
+      {
+        "name":"Salt Lake",
+        "year":2004,
+        "lost":"joined"
+      },
+      {
+        "name":"Salt Lake",
+        "year":2006,
+        "lost":1
+      },
+      {
+        "name":"Salt Lake",
+        "year":2007,
+        "lost":0
+      },
+      {
+        "name":"Salt Lake",
+        "year":2008,
+        "lost":1
+      },
+      {
+        "name":"Salt Lake",
+        "year":2009,
+        "lost":0
+      },
+      {
+        "name":"Salt Lake",
+        "year":2010,
+        "lost":2
+      },
+      {
+        "name":"Salt Lake",
+        "year":2011,
+        "lost":1
+      },
+      {
+        "name":"Salt Lake",
+        "year":2014,
+        "lost":2
+      },
+      {
+        "name":"Salt Lake",
+        "year":2016,
+        "lost":1
+      },
+
+      {
+        "name":"San Jose",
+        "year":1997,
+        "lost":1
+      },
+      {
+        "name":"San Jose",
+        "year":2004,
+        "lost":2
+      },
+      {
+        "name":"San Jose",
+        "year":2006,
+        "lost":0
+      },
+      {
+        "name":"San Jose",
+        "year":2007,
+        "lost":"joined"
+      },
+      {
+        "name":"San Jose",
+        "year":2008,
+        "lost":1
+      },
+      {
+        "name":"San Jose",
+        "year":2009,
+        "lost":1
+      },
+      {
+        "name":"San Jose",
+        "year":2010,
+        "lost":2
+      },
+      {
+        "name":"San Jose",
+        "year":2011,
+        "lost":1
+      },
+      {
+        "name":"San Jose",
+        "year":2014,
+        "lost":1
+      },
+      {
+        "name":"San Jose",
+        "year":2016,
+        "lost":0
+      },
+
+      {
+        "name":"Seattle",
+        "year":2008,
+        "lost":"joined"
+      },
+      {
+        "name":"Seattle",
+        "year":2009,
+        "lost":1
+      },
+      {
+        "name":"Seattle",
+        "year":2010,
+        "lost":2
+      },
+      {
+        "name":"Seattle",
+        "year":2011,
+        "lost":1
+      },
+      {
+        "name":"Seattle",
+        "year":2014,
+        "lost":1
+      },
+      {
+        "name":"Seattle",
+        "year":2016,
+        "lost":0
+      },
+
+      {
+        "name":"Tampa Bay",
+        "year":1997,
+        "lost":3
+      },
+
+      {
+        "name":"Toronto",
+        "year":2006,
+        "lost":"joined"
+      },
+      {
+        "name":"Toronto",
+        "year":2007,
+        "lost":1
+      },
+      {
+        "name":"Toronto",
+        "year":2008,
+        "lost":1
+      },
+      {
+        "name":"Toronto",
+        "year":2009,
+        "lost":0
+      },
+      {
+        "name":"Toronto",
+        "year":2010,
+        "lost":1
+      },
+      {
+        "name":"Toronto",
+        "year":2011,
+        "lost":0
+      },
+      {
+        "name":"Toronto",
+        "year":2014,
+        "lost":1
+      },
+      {
+        "name":"Toronto",
+        "year":2016,
+        "lost":1
+      },
+
+      {
+        "name":"Vancouver",
+        "year":2010,
+        "lost":"joined"
+      },
+      {
+        "name":"Vancouver",
+        "year":2011,
+        "lost":1
+      },
+      {
+        "name":"Vancouver",
+        "year":2014,
+        "lost":1
+      },
+      {
+        "name":"Vancouver",
+        "year":2016,
+        "lost":0  
+      }
+
+]
