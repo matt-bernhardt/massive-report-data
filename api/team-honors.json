@@ -106,6 +106,16 @@
         "country":"usa"
       },
       {
+        "name":"Chicago",
+        "year":2015,
+        "country":"usa"
+      },
+      {
+        "name":"Chicago",
+        "year":2016,
+        "country":"usa"
+      },
+      {
         "name":"Chivas USA",
         "year":2005,
         "country":"usa"
@@ -269,6 +279,17 @@
         "name":"Colorado",
         "year":2014,
         "country":"usa"
+      },
+      {
+        "name":"Colorado",
+        "year":2015,
+        "country":"usa"
+      },
+      {
+        "name":"Colorado",
+        "year":2016,
+        "country":"usa",
+        "playoffs":"semifinals"
       },
       {
         "name":"Columbus",
@@ -386,6 +407,17 @@
         "playoffs":true
       },
       {
+        "name":"Columbus",
+        "year":2015,
+        "country":"usa",
+        "playoffs":"finalist"
+      },
+      {
+        "name":"Columbus",
+        "year":2016,
+        "country":"usa"
+      },
+      {
         "name":"Dallas",
         "year":1996,
         "country":"usa",
@@ -496,6 +528,22 @@
         "name":"Dallas",
         "year":2014,
         "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"Dallas",
+        "year":2015,
+        "country":"usa",
+        "playoffs":"semifinals",
+        "shield":"conference"
+      },
+      {
+        "name":"Dallas",
+        "year":2016,
+        "country":"usa",
+        "opencup":"champion",
+        "shield":"champion",
+        "concacaf":"quarterfinals",
         "playoffs":true
       },
       {
@@ -619,6 +667,19 @@
         "concacaf":"quarterfinals"
       },
       {
+        "name":"DC",
+        "year":2015,
+        "country":"usa",
+        "playoffs":true,
+        "concacaf":"quarterfinals"
+      },
+      {
+        "name":"DC",
+        "year":2016,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
         "name":"Houston",
         "year":2006,
         "country":"usa",
@@ -673,6 +734,16 @@
       {
         "name":"Houston",
         "year":2014,
+        "country":"usa"
+      },
+      {
+        "name":"Houston",
+        "year":2015,
+        "country":"usa"
+      },
+      {
+        "name":"Houston",
+        "year":2016,
         "country":"usa"
       },
       {
@@ -791,6 +862,20 @@
         "country":"usa",
         "playoffs":true,
         "concacaf":"group"
+      },
+      {
+        "name":"Kansas City",
+        "year":2015,
+        "country":"usa",
+        "opencup":"champion",
+        "playoffs":true
+      },
+      {
+        "name":"Kansas City",
+        "year":2016,
+        "country":"usa",
+        "concacaf":"group",
+        "playoffs":true
       },
       {
         "name":"Los Angeles",
@@ -920,6 +1005,19 @@
         "playoffs":"champion"
       },
       {
+        "name":"Los Angeles",
+        "year":2015,
+        "country":"usa",
+        "playoffs":true,
+        "concacaf":"quarterfinals"
+      },
+      {
+        "name":"Los Angeles",
+        "year":2016,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
         "name":"Miami",
         "year":1998,
         "country":"usa",
@@ -962,7 +1060,19 @@
         "year":2014,
         "country":"canada",
         "canada":"champion",
-        "concacaf":"quarterfinals"
+        "concacaf":"finalist"
+      },
+      {
+        "name":"Montreal",
+        "year":2015,
+        "country":"canada",
+        "playoffs":true
+      },
+      {
+        "name":"Montreal",
+        "year":2016,
+        "country":"canada",
+        "playoffs":"semifinals"
       },
       {
         "name":"New England",
@@ -1075,6 +1185,18 @@
         "year":2014,
         "country":"usa",
         "playoffs":"finalist"
+      },
+      {
+        "name":"New England",
+        "year":2015,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"New England",
+        "year":2016,
+        "country":"usa",
+        "opencup":"finalist"
       },
       {
         "name":"New York",
@@ -1193,6 +1315,42 @@
         "concacaf":"group"
       },
       {
+        "name":"New York",
+        "year":2015,
+        "country":"usa",
+        "playoffs":"semifinals",
+        "shield":"champion"
+      },
+      {
+        "name":"New York",
+        "year":2016,
+        "country":"usa",
+        "shield":"conference",
+        "concacaf":"quarterfinals",
+        "playoffs":true
+      },
+      {
+        "name":"New York City",
+        "year":2015,
+        "country":"usa"
+      },
+      {
+        "name":"New York City",
+        "year":2016,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"Orlando",
+        "year":2015,
+        "country":"usa"
+      },
+      {
+        "name":"Orlando",
+        "year":2016,
+        "country":"usa"
+      },
+      {
         "name":"Philadelphia",
         "year":2010,
         "country":"usa"
@@ -1220,6 +1378,18 @@
         "opencup":"finalist"
       },
       {
+        "name":"Philadelphia",
+        "year":2015,
+        "country":"usa",
+        "opencup":"finalist"
+      },
+      {
+        "name":"Philadelphia",
+        "year":2016,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
         "name":"Portland",
         "year":2011,
         "country":"usa"
@@ -1239,6 +1409,18 @@
       {
         "name":"Portland",
         "year":2014,
+        "country":"usa",
+        "concacaf":"group"
+      },
+      {
+        "name":"Portland",
+        "year":2015,
+        "country":"usa",
+        "playoffs":"champion"
+      },
+      {
+        "name":"Portland",
+        "year":2016,
         "country":"usa",
         "concacaf":"group"
       },
@@ -1303,6 +1485,18 @@
         "playoffs":true
       },
       {
+        "name":"Salt Lake",
+        "year":2015,
+        "country":"usa",
+        "concacaf":"quarterfinals"
+      },
+      {
+        "name":"Salt Lake",
+        "year":2016,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
         "name":"San Jose",
         "year":1996,
         "country":"usa",
@@ -1400,6 +1594,16 @@
         "country":"usa"
       },
       {
+        "name":"San Jose",
+        "year":2015,
+        "country":"usa"
+      },
+      {
+        "name":"San Jose",
+        "year":2016,
+        "country":"usa"
+      },
+      {
         "name":"Seattle",
         "year":2009,
         "country":"usa",
@@ -1443,6 +1647,19 @@
         "opencup":"champion",
         "playoffs":"semifinals",
         "shield":"champion"
+      },
+      {
+        "name":"Seattle",
+        "year":2015,
+        "country":"usa",
+        "playoffs":true,
+        "concacaf":"quarterfinals"
+      },
+      {
+        "name":"Seattle",
+        "year":2016,
+        "country":"usa",
+        "playoffs":"champion"
       },
       {
         "name":"Tampa Bay",
@@ -1528,6 +1745,19 @@
         "country":"canada"
       },
       {
+        "name":"Toronto",
+        "year":2015,
+        "country":"canada",
+        "playoffs":true
+      },
+      {
+        "name":"Toronto",
+        "year":2016,
+        "country":"canada",
+        "canada":"champion",
+        "playoffs":"finalist"
+      },
+      {
         "name":"Vancouver",
         "year":2011,
         "country":"canada"
@@ -1548,5 +1778,19 @@
         "year":2014,
         "country":"canada",
         "playoffs":true
+      },
+      {
+        "name":"Vancouver",
+        "year":2015,
+        "country":"canada",
+        "playoffs":true,
+        "canada":"champion",
+        "concacaf":"group"
+      },
+      {
+        "name":"Vancouver",
+        "year":2016,
+        "country":"canada",
+        "concacaf":"quarterfinals"
       }
 ]
