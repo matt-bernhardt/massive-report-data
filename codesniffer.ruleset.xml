@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset name="PHP Coding Standards">
+	<!-- See https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
+
+	<!-- Set a description for this ruleset. -->
+	<description>A custom set of code standard rules to check for Massive Report Data.</description>
+
+	<!-- Probably need to exclude the libs directory (externally-written code) -->
+
+	<!-- Include the WordPress ruleset, with exclusions. -->
+	<rule ref="PHPCS">
+		<exclude name="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" />
+		<exclude name="PEAR.Commenting.FileComment.MissingLicenseTag" />
+	</rule>
+</ruleset>
