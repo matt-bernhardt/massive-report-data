@@ -1,44 +1,56 @@
 <?php
-	if(isset($_GET['player'])){
-		$intPlayerID = $_GET['player'];
-	} else {
-		$intPlayerID = 2938;
-	}
+/**
+ * This loads all recorded player contracts based on a supplied 'player' parameter.
+ *
+ * @category None
+ * @package  MassiveReportData
+ * @author   Matt Bernhardt <matt.j.bernhardt@gmail.com>
+ * @link     https://github.com/matt-bernhardt/massive-report-data
+ */
 
-	include_once("../includes/block_conn_open.php");
+if (true === isset($_GET['player'])) {
+    $intPlayerID = $_GET['player'];
+} else {
+    $intPlayerID = 2938;
+}
 
-	$sql = "SELECT c.TeamID, t.Teamname, c.RosterNumber, TimeStamp(c.SigningDate) AS SortDate, date_format(c.SigningDate,'%c/%e/%y') AS SigningDate , s.ContractName, c.ContractLength, c.TransferFee, c.Notes, c.RelatedID, c.DesignatedPlayer ";
-	$sql .= "FROM tbl_contracts c ";
-	$sql .= "LEFT OUTER JOIN tbl_teams t ON c.TeamID = t.ID ";
-	$sql .= "LEFT OUTER JOIN tbl_teams pt ON c.LastTeamID = pt.ID ";
-	$sql .= "LEFT OUTER JOIN lkp_contractstatus s ON c.ContractType = s.ID ";
-	$sql .= "WHERE playerID = ".$intPlayerID." ";
-	$sql .= "ORDER BY SortDate ASC";
+require_once "../includes/block_conn_open.php";
 
-	$contracts = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+$sql  = "SELECT c.TeamID, t.Teamname, c.RosterNumber, TimeStamp(c.SigningDate) AS SortDate, date_format(c.SigningDate,'%c/%e/%y') AS SigningDate , s.ContractName, c.ContractLength, c.TransferFee, c.Notes, c.RelatedID, c.DesignatedPlayer ";
+$sql .= "FROM tbl_contracts c ";
+$sql .= "LEFT OUTER JOIN tbl_teams t ON c.TeamID = t.ID ";
+$sql .= "LEFT OUTER JOIN tbl_teams pt ON c.LastTeamID = pt.ID ";
+$sql .= "LEFT OUTER JOIN lkp_contractstatus s ON c.ContractType = s.ID ";
+$sql .= "WHERE playerID = ".$intPlayerID." ";
+$sql .= "ORDER BY SortDate ASC";
+
+$rs = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+
+// Fetch the first result.
+$res = $rs->fetch_array(MYSQLI_ASSOC);
 ?>
 <table>
-	<thead>
-		<tr>
-			<th scope="col">Date</th>
-			<th scope="col">Team</th>
-			<th scope="col">Notes</th>
-		</tr>
-	</thead>
-	<tbody>
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Team</th>
+            <th scope="col">Notes</th>
+        </tr>
+    </thead>
+    <tbody>
 <?php
-	while($row = @mysqli_fetch_array($contracts,MYSQLI_ASSOC)) {
+// Do this as long as there is a valid result.
+while (null !== $res) {
+    echo '<tr>';
+    echo '<td>'.$res['SigningDate'].'</td>';
+    echo '<td>'.$res['Teamname'].'</td>';
+    echo '<td>'.$res['Notes'].'</td>';
+    echo '</tr>';
+    // Fetch the next result.
+    $res = $rs->fetch_array(MYSQLI_ASSOC);
+}
 ?>
-		<tr>
-			<td><?php print $row['SigningDate']; ?></td>
-			<td><?php print $row['Teamname']; ?></td>
-			<td><?php print $row['Notes']; ?></td>
-		</tr>
-<?php
-	}
-?>
-	</tbody>
+    </tbody>
 </table>
 <?php
-	include_once("../includes/block_conn_close.php");
-?>
+require_once "../includes/block_conn_close.php";
