@@ -1,5 +1,22 @@
 [
       {
+        "name":"Atlanta",
+        "year":2017,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"Atlanta",
+        "year":2018,
+        "country":"usa",
+        "playoffs":"champion"
+      },
+      {
+        "name":"Atlanta",
+        "year":2019,
+        "country":"usa"
+      },
+      {
         "name":"Chicago",
         "year":1998,
         "country":"usa",
@@ -116,6 +133,22 @@
         "country":"usa"
       },
       {
+        "name":"Chicago",
+        "year":2017,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"Chicago",
+        "year":2018,
+        "country":"usa"
+      },
+      {
+        "name":"Chicago",
+        "year":2019,
+        "country":"usa"
+      },
+      {
         "name":"Chivas USA",
         "year":2005,
         "country":"usa"
@@ -169,6 +202,11 @@
       {
         "name":"Chivas USA",
         "year":2014,
+        "country":"usa"
+      },
+      {
+        "name":"Cincinnati",
+        "year":2019,
         "country":"usa"
       },
       {
@@ -290,6 +328,21 @@
         "year":2016,
         "country":"usa",
         "playoffs":"semifinals"
+      },
+      {
+        "name":"Colorado",
+        "year":2017,
+        "country":"usa"
+      },
+      {
+        "name":"Colorado",
+        "year":2018,
+        "country":"usa"
+      },
+      {
+        "name":"Colorado",
+        "year":2019,
+        "country":"usa"
       },
       {
         "name":"Columbus",
@@ -418,6 +471,23 @@
         "country":"usa"
       },
       {
+        "name":"Columbus",
+        "year":2017,
+        "country":"usa",
+        "playoffs":"semifinals"
+      },
+      {
+        "name":"Columbus",
+        "year":2018,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"Columbus",
+        "year":2019,
+        "country":"usa"
+      },
+      {
         "name":"Dallas",
         "year":1996,
         "country":"usa",
@@ -543,8 +613,24 @@
         "country":"usa",
         "opencup":"champion",
         "shield":"champion",
-        "concacaf":"quarterfinals",
+        "concacaf":"semifinals",
         "playoffs":true
+      },
+      {
+        "name":"Dallas",
+        "year":2017,
+        "country":"usa"
+      },
+      {
+        "name":"Dallas",
+        "year":2018,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"Dallas",
+        "year":2019,
+        "country":"usa"
       },
       {
         "name":"DC",
@@ -680,6 +766,22 @@
         "playoffs":true
       },
       {
+        "name":"DC",
+        "year":2017,
+        "country":"usa"
+      },
+      {
+        "name":"DC",
+        "year":2018,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"DC",
+        "year":2019,
+        "country":"usa"
+      },
+      {
         "name":"Houston",
         "year":2006,
         "country":"usa",
@@ -744,6 +846,23 @@
       {
         "name":"Houston",
         "year":2016,
+        "country":"usa"
+      },
+      {
+        "name":"Houston",
+        "year":2017,
+        "country":"usa",
+        "playoffs":"semifinals"
+      },
+      {
+        "name":"Houston",
+        "year":2018,
+        "country":"usa",
+        "opencup":"champion"
+      },
+      {
+        "name":"Houston",
+        "year":2019,
         "country":"usa"
       },
       {
@@ -878,6 +997,36 @@
         "playoffs":true
       },
       {
+        "name":"Kansas City",
+        "year":2017,
+        "country":"usa",
+        "opencup":"champion",
+        "playoffs":true
+      },
+      {
+        "name":"Kansas City",
+        "year":2018,
+        "country":"usa",
+        "shield":"conference",
+        "playoffs":"semifinals"
+      },
+      {
+        "name":"Kansas City",
+        "year":2019,
+        "country":"usa"
+      },
+      {
+        "name":"LAFC",
+        "year":2018,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"LAFC",
+        "year":2019,
+        "country":"usa"
+      },
+      {
         "name":"Los Angeles",
         "year":1996,
         "country":"usa",
@@ -1018,6 +1167,21 @@
         "playoffs":true
       },
       {
+        "name":"Los Angeles",
+        "year":2017,
+        "country":"usa"
+      },
+      {
+        "name":"Los Angeles",
+        "year":2018,
+        "country":"usa"
+      },
+      {
+        "name":"Los Angeles",
+        "year":2019,
+        "country":"usa"
+      },
+      {
         "name":"Miami",
         "year":1998,
         "country":"usa",
@@ -1041,6 +1205,21 @@
         "country":"usa",
         "shield":"champion",
         "playoffs":"semifinals"
+      },
+      {
+        "name":"Minnesota",
+        "year":2017,
+        "country":"usa"
+      },
+      {
+        "name":"Minnesota",
+        "year":2018,
+        "country":"usa"
+      },
+      {
+        "name":"Minnesota",
+        "year":2019,
+        "country":"usa"
       },
       {
         "name":"Montreal",
@@ -1073,6 +1252,21 @@
         "year":2016,
         "country":"canada",
         "playoffs":"semifinals"
+      },
+      {
+        "name":"Montreal",
+        "year":2017,
+        "country":"canada"
+      },
+      {
+        "name":"Montreal",
+        "year":2018,
+        "country":"canada"
+      },
+      {
+        "name":"Montreal",
+        "year":2019,
+        "country":"canada"
       },
       {
         "name":"New England",
@@ -1197,6 +1391,21 @@
         "year":2016,
         "country":"usa",
         "opencup":"finalist"
+      },
+      {
+        "name":"New England",
+        "year":2017,
+        "country":"usa"
+      },
+      {
+        "name":"New England",
+        "year":2018,
+        "country":"usa"
+      },
+      {
+        "name":"New England",
+        "year":2019,
+        "country":"usa"
       },
       {
         "name":"New York",
@@ -1330,6 +1539,25 @@
         "playoffs":true
       },
       {
+        "name":"New York",
+        "year":2017,
+        "country":"usa",
+        "opencup":"finalist",
+        "playoffs":true
+      },
+      {
+        "name":"New York",
+        "year":2018,
+        "country":"usa",
+        "shield":"champion",
+        "playoffs":"semifinals"
+      },
+      {
+        "name":"New York",
+        "year":2019,
+        "country":"usa"
+      },
+      {
         "name":"New York City",
         "year":2015,
         "country":"usa"
@@ -1341,6 +1569,23 @@
         "playoffs":true
       },
       {
+        "name":"New York City",
+        "year":2017,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"New York City",
+        "year":2018,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"New York City",
+        "year":2019,
+        "country":"usa"
+      },
+      {
         "name":"Orlando",
         "year":2015,
         "country":"usa"
@@ -1348,6 +1593,21 @@
       {
         "name":"Orlando",
         "year":2016,
+        "country":"usa"
+      },
+      {
+        "name":"Orlando",
+        "year":2017,
+        "country":"usa"
+      },
+      {
+        "name":"Orlando",
+        "year":2018,
+        "country":"usa"
+      },
+      {
+        "name":"Orlando",
+        "year":2019,
         "country":"usa"
       },
       {
@@ -1390,6 +1650,23 @@
         "playoffs":true
       },
       {
+        "name":"Philadelphia",
+        "year":2017,
+        "country":"usa"
+      },
+      {
+        "name":"Philadelphia",
+        "year":2018,
+        "country":"usa",
+        "opencup":"finalist",
+        "playoffs":true
+      },
+      {
+        "name":"Philadelphia",
+        "year":2019,
+        "country":"usa"
+      },
+      {
         "name":"Portland",
         "year":2011,
         "country":"usa"
@@ -1423,6 +1700,24 @@
         "year":2016,
         "country":"usa",
         "concacaf":"group"
+      },
+      {
+        "name":"Portland",
+        "year":2017,
+        "country":"usa",
+        "shield":"conference",
+        "playoffs":true
+      },
+      {
+        "name":"Portland",
+        "year":2018,
+        "country":"usa",
+        "playoffs":"finalist"
+      },
+      {
+        "name":"Portland",
+        "year":2019,
+        "country":"usa"
       },
       {
         "name":"Salt Lake",
@@ -1495,6 +1790,22 @@
         "year":2016,
         "country":"usa",
         "playoffs":true
+      },
+      {
+        "name":"Salt Lake",
+        "year":2017,
+        "country":"usa"
+      },
+      {
+        "name":"Salt Lake",
+        "year":2018,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"Salt Lake",
+        "year":2019,
+        "country":"usa"
       },
       {
         "name":"San Jose",
@@ -1604,6 +1915,22 @@
         "country":"usa"
       },
       {
+        "name":"San Jose",
+        "year":2017,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"San Jose",
+        "year":2018,
+        "country":"usa"
+      },
+      {
+        "name":"San Jose",
+        "year":2019,
+        "country":"usa"
+      },
+      {
         "name":"Seattle",
         "year":2009,
         "country":"usa",
@@ -1660,6 +1987,23 @@
         "year":2016,
         "country":"usa",
         "playoffs":"champion"
+      },
+      {
+        "name":"Seattle",
+        "year":2017,
+        "country":"usa",
+        "playoffs":"finalist"
+      },
+      {
+        "name":"Seattle",
+        "year":2018,
+        "country":"usa",
+        "playoffs":true
+      },
+      {
+        "name":"Seattle",
+        "year":2019,
+        "country":"usa"
       },
       {
         "name":"Tampa Bay",
@@ -1758,6 +2102,25 @@
         "playoffs":"finalist"
       },
       {
+        "name":"Toronto",
+        "year":2017,
+        "country":"canada",
+        "canada":"champion",
+        "playoffs":"champion",
+        "shield":"champion"
+      },
+      {
+        "name":"Toronto",
+        "year":2018,
+        "country":"canada",
+        "canada":"champion"
+      },
+      {
+        "name":"Toronto",
+        "year":2019,
+        "country":"canada"
+      },
+      {
         "name":"Vancouver",
         "year":2011,
         "country":"canada"
@@ -1791,6 +2154,22 @@
         "name":"Vancouver",
         "year":2016,
         "country":"canada",
-        "concacaf":"quarterfinals"
+        "concacaf":"semifinals"
+      },
+      {
+        "name":"Vancouver",
+        "year":2017,
+        "country":"canada",
+        "playoffs":true
+      },
+      {
+        "name":"Vancouver",
+        "year":2018,
+        "country":"canada"
+      },
+      {
+        "name":"Vancouver",
+        "year":2019,
+        "country":"canada"
       }
 ]
