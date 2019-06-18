@@ -9,10 +9,12 @@
 		<p>The site is maintained by Matt Bernhardt, a longtime observer of the team who has contributed to a number of platforms over the years. I record, analyze and visualize a wide variety of information to provide some perspective on the team's activities.</p>
 		<p>This is a work in progress. I invite you to look around, and let me know if there is something I've overlooked or gotten wrong. My email address is at the bottom of every page.</p>
 <?php
-	$sql = "SELECT guid, DATE_FORMAT(post_date,'%M %D, %Y') AS show_date, post_content, post_title ";
-	$sql .= "FROM wp_posts ";
-	$sql .= "WHERE post_type = 'post' AND post_status = 'publish' ";
-	$sql .= "ORDER BY post_date DESC ";
+	$sql = "SELECT p.guid, DATE_FORMAT(p.post_date,'%M %D, %Y') AS show_date, p.post_title, t.guid AS thumbnail ";
+	$sql .= "FROM wp_posts p ";
+	$sql .= "LEFT OUTER JOIN wp_postmeta m ON p.id = m.post_id ";
+	$sql .= "LEFT OUTER JOIN wp_posts t ON m.meta_value = t.id ";
+	$sql .= "WHERE p.post_type = 'post' AND p.post_status = 'publish' AND m.meta_key = '_thumbnail_id' ";
+	$sql .= "ORDER BY p.post_date DESC ";
 	$sql .= "LIMIT 0,5;";
 	$updates = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 	while($row = @mysqli_fetch_array($updates,MYSQLI_ASSOC)) {
@@ -20,7 +22,7 @@
 		<div class="update">
 			<h2><a href="<?php echo $row['guid']; ?>"><?php echo $row['post_title']; ?></a></h2>
 			<p><?php echo $row['show_date']; ?><br>
-			<?php // echo $row['post_content']; ?>
+			<?php // echo $row['thumbnail']; ?>
 			</p>
 		</div>
 <?php

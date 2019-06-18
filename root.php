@@ -164,6 +164,10 @@
 					include ("includes/visualize_standings.php");
 					break;
 
+				case "standings-usl":
+					include ("includes/visualize_standings_usl.php");
+					break;
+
 				default:
 					// Generic browse
 					break;
