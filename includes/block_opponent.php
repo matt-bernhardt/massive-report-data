@@ -26,7 +26,7 @@
 		$intEndYear = $_GET['endyear'];
 	} else {
 		$intEndYear = date('Y');
-		$intEndYear = 2017;
+		$intEndYear = $intThisYear;
 	}
 	
 	$strHomeSelected = '';
@@ -83,7 +83,7 @@
 	$longPageContent .= '<label for="startyear">Start Date:';
 	$longPageContent .= '<select id="startyear" name="startyear">';
 	$intDefault = 1996;
-	for($x=1996;$x<=2017;$x++){
+	for($x=1996;$x<=$intThisYear;$x++){
 		if($x==$intStartYear){
 			$strSelected = ' selected="selected"';
 		} else {
@@ -95,8 +95,8 @@
 	$longPageContent .= '</label>';
 	$longPageContent .= '<label for="endyear">End Date:';
 	$longPageContent .= '<select id="endyear" name="endyear">';
-	$intDefault = 2017;
-	for($x=1996;$x<=2017;$x++){
+	$intDefault = $intThisYear;
+	for($x=1996;$x<=$intThisYear;$x++){
 		if($x==$intEndYear){
 			$strSelected = ' selected="selected"';
 		} else {

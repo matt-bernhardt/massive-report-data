@@ -76,7 +76,7 @@ $(function () {
 	var d = new Date();
 	var arrHash = [];
 	// arrHash = getHashArray(d.getFullYear());
-	arrHash = getHashArray(2017);
+	arrHash = getHashArray(<?php echo $intThisYear; ?>);
 
 	// insert checkboxes
 	i = 0;

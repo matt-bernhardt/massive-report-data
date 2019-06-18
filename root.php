@@ -13,6 +13,8 @@
 	$strMode = $arrPath[0];
 	$strMessage = "";
 
+	$intThisYear = 2019;
+
 	switch ($strMode) {
 		case "about":
 			// About this site
