@@ -131,7 +131,7 @@ var datasets = {
 	var d = new Date();
 	var arrHash = [];
 	// arrHash = getHashArray(d.getFullYear());
-	arrHash = getHashArray(2017);
+	arrHash = getHashArray(<?php echo $intThisYear; ?>);
 
 	// set initial state based on arrHash
 	i = 0;
